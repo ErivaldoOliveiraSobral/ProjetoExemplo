@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+	<Module Name="wfsvc11e58d9d44464a7599c9f31f6364cc72_" Url="wfsvc/11e58d9d44464a7599c9f31f6364cc72" RootWebOnly="FALSE" Path="Files\wfsvc\11e58d9d44464a7599c9f31f6364cc72" xmlns="http://schemas.microsoft.com/sharepoint/">
+		<File Url="workflow.xaml" Type="GhostableInLibrary" IgnoreIfAlreadyExists="false" ReplaceContent="true" Level="Published" Path="workflow.xaml">
+			<Property Name="ContentTypeId" Value="0x01002A2479FF33DD4BC3B1533A012B65371700137DF570EA7E1244B24B0D7FD31C7244" />
+			<Property Name="ContentType" Value="WorkflowServiceDefinition" />
+			<Property Name="_ModerationStatus" Value="0" />
+			<Property Name="FileDirRef" Value="wfsvc/11e58d9d44464a7599c9f31f6364cc72" />
+			<Property Name="FSObjType" Value="0" />
+			<Property Name="FileLeafRef" Value="workflow.xaml" />
+			<Property Name="MetaInfo" Value="4254;#SPDConfig.StartManually:SW|true&#xD;&#xA;vti_parserversion:SR|15.0.0.4875&#xD;&#xA;WSDescription:SW|Fluxo de Aprovação de NOTIF&#xD;&#xA;IsProjectMode:SW|false&#xD;&#xA;WSGUID:SW|11e58d9d-4446-4a75-99c9-f31f6364cc72&#xD;&#xA;WSDisplayName:SW|NOTIF&#xD;&#xA;WSPublishState:IW|3&#xD;&#xA;vti_author:SR|i:0#.w|sp2013\\administrator&#xD;&#xA;SPDConfig.StartOnChange:SW|false&#xD;&#xA;AutosetStatusToStageName:SW|true&#xD;&#xA;SubscriptionName:SW|NOTIF&#xD;&#xA;RestrictToScope:SW|$ListId:Lists/NOTIF;&#xD;&#xA;HistoryListId:SW|{$ListId:Lists/WorkflowHistoryList;}&#xD;&#xA;RestrictToType:SW|List&#xD;&#xA;vti_foldersubfolderitemcount:IW|0&#xD;&#xA;vti_modifiedby:SR|i:0#.w|sp2013\\administrator&#xD;&#xA;ContentTypeId:SW|0x01002A2479FF33DD4BC3B1533A012B65371700137DF570EA7E1244B24B0D7FD31C7244&#xD;&#xA;SPDConfig.StartOnCreate:SW|false&#xD;&#xA;FileLeafRef:SW|workflow.xaml&#xD;&#xA;InitiationUrl:SW|&#xD;&#xA;RequiresInitiationForm:SW|false&#xD;&#xA;SubscriptionId:SW|{8056E451-542F-406F-AE58-050A580A99C5}&#xD;&#xA;TaskListId:SW|{$ListId:Lists/WorkflowTaskList;}&#xD;&#xA;FormField:SW|&lt;Fields /&gt;&#xD;&#xA;SPDConfig.LastEditMode:SW|TextBased&#xD;&#xA;vti_folderitemcount:IW|0&#xD;&#xA;isReusable:SW|false&#xD;&#xA;SPDConfig.VsdxVersion:SW|1&#xD;&#xA;" />
+			<Property Name="Order" Value="425400.000000000" />
+			<Property Name="WSGUID" Value="{11E58D9D-4446-4A75-99C9-F31F6364CC72}" />
+			<Property Name="WSPublishState" Value="3" />
+			<Property Name="WSDisplayName" Value="NOTIF" />
+			<Property Name="WSDescription" Value="Fluxo de Aprovação de NOTIF" />
+		</File>
+		<File Url="WorkflowAssociation_75436d92df844cc38624a93822bd2f55" Type="GhostableInLibrary" IgnoreIfAlreadyExists="false" ReplaceContent="true" Level="Published" Path="WorkflowAssociation_75436d92df844cc38624a93822bd2f55">
+			<Property Name="ContentTypeId" Value="0x0100AA27A923036E459D9EF0D18BBD0B958700B6EC88C1C0DE08469E6B56E917204264" />
+			<Property Name="ContentType" Value="WorkflowServiceSubscription" />
+			<Property Name="_ModerationStatus" Value="0" />
+			<Property Name="FileDirRef" Value="wfsvc/11e58d9d44464a7599c9f31f6364cc72" />
+			<Property Name="FSObjType" Value="0" />
+			<Property Name="FileLeafRef" Value="WorkflowAssociation_75436d92df844cc38624a93822bd2f55" />
+			<Property Name="MetaInfo" Value="4270;#vti_parserversion:SR|15.0.0.4875&#xD;&#xA;WSGUID:SW|8056e451-542f-406f-ae58-050a580a99c5&#xD;&#xA;WSDisplayName:SW|NOTIF&#xD;&#xA;WSEnabled:BW|TRUE&#xD;&#xA;WSPublishState:IW|3&#xD;&#xA;CreatedBySPD:SW|1&#xD;&#xA;vti_author:SR|i:0#.w|sp2013\\administrator&#xD;&#xA;HistoryListId:SW|$ListId:Lists/WorkflowHistoryList;&#xD;&#xA;WSEventSourceGUID:SW|$ListId:Lists/NOTIF;&#xD;&#xA;WSEventType:SW|WorkflowStart#;&#xD;&#xA;vti_modifiedby:SR|i:0#.w|sp2013\\administrator&#xD;&#xA;vti_foldersubfolderitemcount:IR|0&#xD;&#xA;Microsoft.SharePoint.ActivationProperties.ListId:SW|$ListId:Lists/NOTIF;&#xD;&#xA;vti_privatelistexempt:BW|true&#xD;&#xA;FileLeafRef:SW|WorkflowAssociation_75436d92df844cc38624a93822bd2f55&#xD;&#xA;Microsoft.SharePoint.ActivationProperties.ListName:SW|NOTIF&#xD;&#xA;WSEventContextKeys:SW|StatusColumnCreated;#WorkflowService\r\nCreatedBySPD;#WorkflowService\r\nCurrentWebUri;#WorkflowService\r\nHistoryListId;#WorkflowService\r\nSharePointWorkflowContext.ActivationProperties.SiteId;#WorkflowService\r\nTaskListId;#WorkflowService\r\nMicrosoft.SharePoint.ActivationProperties.ParentContentTypeId;#Instance\r\nSharePointWorkflowContext.ActivationProperties.WebId;#WorkflowService\r\nMicrosoft.SharePoint.ActivationProperties.ListId;#WorkflowService\r\nMicrosoft.SharePoint.ActivationProperties.ListName;#WorkflowService\r\nMicrosoft.SharePoint.ActivationProperties.CurrentItemUrl;#Instance\r\nMicrosoft.SharePoint.ActivationProperties.ItemId;#Instance\r\nMicrosoft.SharePoint.ActivationProperties.ItemGuid;#Instance\r\nMicrosoft.SharePoint.ActivationProperties.UniqueId;#Instance\r\nStatusFieldName;#WorkflowService\r\nMicrosoft.SharePoint.ActivationProperties.RelatedItems;#Instance\r\n&#xD;&#xA;Microsoft.SharePoint.ActivationProperties.ParentContentTypeId:SW|&#xD;&#xA;ContentTypeId:SW|0x0100AA27A923036E459D9EF0D18BBD0B958700B6EC88C1C0DE08469E6B56E917204264&#xD;&#xA;StatusColumnCreated:SW|1&#xD;&#xA;SharePointWorkflowContext.ActivationProperties.WebId:SW|E39E1D06-B88E-45AA-9C95-78910F96EFF1&#xD;&#xA;CurrentWebUri:SW|http://pi&#xD;&#xA;TaskListId:SW|$ListId:Lists/WorkflowTaskList;&#xD;&#xA;StatusFieldName:SW|NOTIF&#xD;&#xA;SharePointWorkflowContext.ActivationProperties.SiteId:SW|E4AE1AE8-976E-46CC-A2D7-262BE4B36249&#xD;&#xA;vti_folderitemcount:IR|0&#xD;&#xA;" />
+			<Property Name="Order" Value="427000.000000000" />
+			<Property Name="WSGUID" Value="{8056E451-542F-406F-AE58-050A580A99C5}" />
+			<Property Name="WSPublishState" Value="3" />
+			<Property Name="WSEventContextKeys" Value="StatusColumnCreated;#WorkflowService&#xA;CreatedBySPD;#WorkflowService&#xA;CurrentWebUri;#WorkflowService&#xA;HistoryListId;#WorkflowService&#xA;SharePointWorkflowContext.ActivationProperties.SiteId;#WorkflowService&#xA;TaskListId;#WorkflowService&#xA;Microsoft.SharePoint.ActivationProperties.ParentContentTypeId;#Instance&#xA;SharePointWorkflowContext.ActivationProperties.WebId;#WorkflowService&#xA;Microsoft.SharePoint.ActivationProperties.ListId;#WorkflowService&#xA;Microsoft.SharePoint.ActivationProperties.ListName;#WorkflowService&#xA;Microsoft.SharePoint.ActivationProperties.CurrentItemUrl;#Instance&#xA;Microsoft.SharePoint.ActivationProperties.ItemId;#Instance&#xA;Microsoft.SharePoint.ActivationProperties.ItemGuid;#Instance&#xA;Microsoft.SharePoint.ActivationProperties.UniqueId;#Instance&#xA;StatusFieldName;#WorkflowService&#xA;Microsoft.SharePoint.ActivationProperties.RelatedItems;#Instance&#xA;" />
+			<Property Name="WSEventSourceGUID" Value="{$ListId:Lists/NOTIF;}" />
+			<Property Name="WSDisplayName" Value="NOTIF" />
+			<Property Name="WSEventType" Value="WorkflowStart#;" />
+			<Property Name="WSEnabled" Value="TRUE" />
+		</File>
+	</Module>
+</Elements>

@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalDeFluxoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="PortalDeFluxoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cidade" EntityType="PortalDeFluxoModel.Cidade" />
+    <EntitySet Name="Delegacao" EntityType="PortalDeFluxoModel.Delegacao" />
+    <EntitySet Name="Documento" EntityType="PortalDeFluxoModel.Documento" />
+    <EntitySet Name="EmailAttachment" EntityType="PortalDeFluxoModel.EmailAttachment" />
+    <EntitySet Name="Estado" EntityType="PortalDeFluxoModel.Estado" />
+    <EntitySet Name="EstruturaComercial" EntityType="PortalDeFluxoModel.EstruturaComercial" />
+    <EntitySet Name="EstruturaComercial_Modificada" EntityType="PortalDeFluxoModel.EstruturaComercial_Modificada" />
+    <EntitySet Name="EstruturaComercial_Salesforce" EntityType="PortalDeFluxoModel.EstruturaComercial_Salesforce" />
+    <EntitySet Name="HorarioVerao" EntityType="PortalDeFluxoModel.HorarioVerao" />
+    <EntitySet Name="ListaHist" EntityType="PortalDeFluxoModel.ListaHist" />
+    <EntitySet Name="Log" EntityType="PortalDeFluxoModel.Log" />
+    <EntitySet Name="LogIntegracao" EntityType="PortalDeFluxoModel.LogIntegracao" />
+    <EntitySet Name="Parametro" EntityType="PortalDeFluxoModel.Parametro" />
+    <EntitySet Name="PropostaDocumento" EntityType="PortalDeFluxoModel.PropostaDocumento" />
+    <EntitySet Name="ServicoAgendado" EntityType="PortalDeFluxoModel.ServicoAgendado" />
+    <EntitySet Name="TabelaExemplo" EntityType="PortalDeFluxoModel.TabelaExemplo" />
+    <EntitySet Name="TarefaHist" EntityType="PortalDeFluxoModel.TarefaHist" />
+    <EntitySet Name="TipoProposta" EntityType="PortalDeFluxoModel.TipoProposta" />
+    <EntitySet Name="TipoPropostaDocumento" EntityType="PortalDeFluxoModel.TipoPropostaDocumento" />
+    <EntitySet Name="WFGestaoFluxo_Fluxo" EntityType="PortalDeFluxoModel.WFGestaoFluxo_Fluxo" />
+    <EntitySet Name="WFGestaoFluxo_Tarefa" EntityType="PortalDeFluxoModel.WFGestaoFluxo_Tarefa" />
+    <AssociationSet Name="FK_Cidade_Estado" Association="PortalDeFluxoModel.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropostasDocumento_Documento" Association="PortalDeFluxoModel.FK_PropostasDocumento_Documento">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="PropostaDocumento" EntitySet="PropostaDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoPropostaDocumento_Documento" Association="PortalDeFluxoModel.FK_TipoPropostaDocumento_Documento">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="TipoPropostaDocumento" EntitySet="TipoPropostaDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropostaDocumento_TipoProposta" Association="PortalDeFluxoModel.FK_PropostaDocumento_TipoProposta">
+      <End Role="TipoProposta" EntitySet="TipoProposta" />
+      <End Role="PropostaDocumento" EntitySet="PropostaDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoPropostaDocumento_TipoProposta" Association="PortalDeFluxoModel.FK_TipoPropostaDocumento_TipoProposta">
+      <End Role="TipoProposta" EntitySet="TipoProposta" />
+      <End Role="TipoPropostaDocumento" EntitySet="TipoPropostaDocumento" />
+    </AssociationSet>
+    <EntitySet Name="Lista" EntityType="PortalDeFluxoModel.Lista" />
+    <AssociationSet Name="FK_ListaHist_Lista" Association="PortalDeFluxoModel.FK_ListaHist_Lista">
+      <End Role="Lista" EntitySet="Lista" />
+      <End Role="ListaHist" EntitySet="ListaHist" />
+    </AssociationSet>
+    <EntitySet Name="AnoContratual" EntityType="PortalDeFluxoModel.AnoContratual" />
+    <AssociationSet Name="FK_AnoContratual_TipoProposta" Association="PortalDeFluxoModel.FK_AnoContratual_TipoProposta">
+      <End Role="TipoProposta" EntitySet="TipoProposta" />
+      <End Role="AnoContratual" EntitySet="AnoContratual" />
+    </AssociationSet>
+    <EntitySet Name="Lembrete" EntityType="PortalDeFluxoModel.Lembrete" />
+    <EntitySet Name="Tarefa" EntityType="PortalDeFluxoModel.Tarefa" />
+    <AssociationSet Name="FK_Lembrete_Tarefa" Association="PortalDeFluxoModel.FK_Lembrete_Tarefa">
+      <End Role="Tarefa" EntitySet="Tarefa" />
+      <End Role="Lembrete" EntitySet="Lembrete" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarefa_Discussao" Association="PortalDeFluxoModel.FK_Tarefa_Discussao">
+      <End Role="Tarefa" EntitySet="Tarefa" />
+      <End Role="Tarefa1" EntitySet="Tarefa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TarefaHist_Tarefa" Association="PortalDeFluxoModel.FK_TarefaHist_Tarefa">
+      <End Role="Tarefa" EntitySet="Tarefa" />
+      <End Role="TarefaHist" EntitySet="TarefaHist" />
+    </AssociationSet>
+    <EntitySet Name="RelatorioOperacionalTarefa" EntityType="PortalDeFluxoModel.RelatorioOperacionalTarefa" />
+    <EntitySet Name="InstanciaFluxo" EntityType="PortalDeFluxoModel.InstanciaFluxo" />
+    <AssociationSet Name="FK_InstanciaFluxo_Lista" Association="PortalDeFluxoModel.FK_InstanciaFluxo_Lista">
+      <End Role="Lista" EntitySet="Lista" />
+      <End Role="InstanciaFluxo" EntitySet="InstanciaFluxo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarefa_InstanciaFluxo" Association="PortalDeFluxoModel.FK_Tarefa_InstanciaFluxo">
+      <End Role="InstanciaFluxo" EntitySet="InstanciaFluxo" />
+      <End Role="Tarefa" EntitySet="Tarefa" />
+    </AssociationSet>
+    <EntitySet Name="GrupoSP" EntityType="PortalDeFluxoModel.GrupoSP" />
+    <EntitySet Name="GrupoUsuariosSP" EntityType="PortalDeFluxoModel.GrupoUsuariosSP" />
+    <EntitySet Name="UsuarioSP" EntityType="PortalDeFluxoModel.UsuarioSP" />
+    <AssociationSet Name="FK_GrupoUsuariosSP_GrupoSP" Association="PortalDeFluxoModel.FK_GrupoUsuariosSP_GrupoSP">
+      <End Role="GrupoSP" EntitySet="GrupoSP" />
+      <End Role="GrupoUsuariosSP" EntitySet="GrupoUsuariosSP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrupoUsuariosSP_UsuariosSP" Association="PortalDeFluxoModel.FK_GrupoUsuariosSP_UsuariosSP">
+      <End Role="UsuarioSP" EntitySet="UsuarioSP" />
+      <End Role="GrupoUsuariosSP" EntitySet="GrupoUsuariosSP" />
+    </AssociationSet>
+    <EntitySet Name="SAEParametros" EntityType="PortalDeFluxoModel.SAEParametros" />
+  </EntityContainer>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdEstado" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SiglaEstado" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="SiglaPais" Type="String" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="CodigoSistemaRBC" Type="Int32" />
+    <NavigationProperty Name="Estado" Relationship="PortalDeFluxoModel.FK_Cidade_Estado" FromRole="Cidade" ToRole="Estado" />
+  </EntityType>
+  <EntityType Name="Delegacao">
+    <Key>
+      <PropertyRef Name="IdDelegacao" />
+    </Key>
+    <Property Name="IdDelegacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="LoginDe" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeDe" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EmailDe" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LoginPara" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomePara" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EmailPara" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataFim" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Status" Type="Int32" Nullable="false" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="CodigoDelegacao2007" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="IdDocumento" />
+    </Key>
+    <Property Name="IdDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Agrupador" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PropostaDocumento" Relationship="PortalDeFluxoModel.FK_PropostasDocumento_Documento" FromRole="Documento" ToRole="PropostaDocumento" />
+    <NavigationProperty Name="TipoPropostaDocumento" Relationship="PortalDeFluxoModel.FK_TipoPropostaDocumento_Documento" FromRole="Documento" ToRole="TipoPropostaDocumento" />
+  </EntityType>
+  <EntityType Name="EmailAttachment">
+    <Key>
+      <PropertyRef Name="IdEmailAttachment" />
+    </Key>
+    <Property Name="IdEmailAttachment" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoEmail" Type="Byte" Nullable="false" />
+    <Property Name="Processado" Type="Boolean" Nullable="false" />
+    <Property Name="CodigoLista" Type="Guid" Nullable="false" />
+    <Property Name="IdItem" Type="Int32" Nullable="false" />
+    <Property Name="NomeProposta" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ibm" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RazaoSocial" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="GerenteTerritorio" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="GerenteRegiao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DiretorVendas" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Cdr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Gdr" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Ambiente2013" Type="Boolean" Nullable="false" />
+    <Property Name="DescricaoAssuntoEmail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoMensagemEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="EmailUsuario" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UF" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cidade" Relationship="PortalDeFluxoModel.FK_Cidade_Estado" FromRole="Estado" ToRole="Cidade" />
+  </EntityType>
+  <EntityType Name="EstruturaComercial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IBM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="SiteCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="GT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CDR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GDR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="EstruturaComercial_Modificada">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IBM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="SiteCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="GT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CDR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GDR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Processado" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstruturaComercial_Salesforce">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IBM" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="SiteCode" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="GT" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DV" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CDR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="GDR" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="HorarioVerao">
+    <Key>
+      <PropertyRef Name="IdHorarioVerao" />
+    </Key>
+    <Property Name="IdHorarioVerao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataFim" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Ano" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListaHist">
+    <Key>
+      <PropertyRef Name="IdListaHist" />
+    </Key>
+    <Property Name="IdListaHist" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoLista" Type="Guid" Nullable="false" />
+    <Property Name="CodigoItem" Type="Int32" Nullable="false" />
+    <Property Name="XmlAlteracao" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Lista" Relationship="PortalDeFluxoModel.FK_ListaHist_Lista" FromRole="ListaHist" ToRole="Lista" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeProcesso" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoOrigem" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoMensagem" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoDetalhe" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="Erro" Type="Boolean" Nullable="false" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="LogIntegracao">
+    <Key>
+      <PropertyRef Name="IdLogIntegracao" />
+    </Key>
+    <Property Name="IdLogIntegracao" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DataExecucao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="WorkflowProgressID" Type="Int32" Nullable="false" />
+    <Property Name="QuantidadeLista" Type="Int32" Nullable="false" />
+    <Property Name="QuantidadeInstancia" Type="Int32" Nullable="false" />
+    <Property Name="QuantidadeTarefa" Type="Int32" Nullable="false" />
+    <Property Name="QuantidadeDelegacao" Type="Int32" Nullable="false" />
+    <Property Name="TempoExecucao" Type="Int32" Nullable="false" />
+    <Property Name="ExecucaoCompleta" Type="Boolean" />
+    <Property Name="ExecucaoGestaoFluxo" Type="Boolean" />
+    <Property Name="QuantidadeGestaoFluxoFluxo" Type="Int32" />
+    <Property Name="QuantidadeGestaoFluxoTarefa" Type="Int32" />
+    <Property Name="QuantidadeGestaoFluxoTarefaStatus" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Parametro">
+    <Key>
+      <PropertyRef Name="IdParametro" />
+    </Key>
+    <Property Name="IdParametro" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Valor" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="PropostaDocumento">
+    <Key>
+      <PropertyRef Name="IdPropostaDocumento" />
+    </Key>
+    <Property Name="IdPropostaDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTipoProposta" Type="Int32" Nullable="false" />
+    <Property Name="IdDocumento" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Documento" Relationship="PortalDeFluxoModel.FK_PropostasDocumento_Documento" FromRole="PropostaDocumento" ToRole="Documento" />
+    <NavigationProperty Name="TipoProposta" Relationship="PortalDeFluxoModel.FK_PropostaDocumento_TipoProposta" FromRole="PropostaDocumento" ToRole="TipoProposta" />
+  </EntityType>
+  <EntityType Name="ServicoAgendado">
+    <Key>
+      <PropertyRef Name="IdServicoAgendado" />
+    </Key>
+    <Property Name="IdServicoAgendado" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NomeAssemblyFullName" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="NomeAssemblyType" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoAgenda" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DataUltimaExecucao" Type="DateTime" Precision="3" />
+    <Property Name="DataProximaExecucao" Type="DateTime" Precision="3" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="Logar" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TabelaExemplo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Valor" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TarefaHist">
+    <Key>
+      <PropertyRef Name="IdTarefaHist" />
+    </Key>
+    <Property Name="IdTarefaHist" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTarefa" Type="Int32" Nullable="false" />
+    <Property Name="TipoTarefaHist" Type="Byte" Nullable="false" />
+    <Property Name="LoginDe" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginPara" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="ComentarioDelegacao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Tarefa" Relationship="PortalDeFluxoModel.FK_TarefaHist_Tarefa" FromRole="TarefaHist" ToRole="Tarefa" />
+  </EntityType>
+  <EntityType Name="TipoProposta">
+    <Key>
+      <PropertyRef Name="IdTipoProposta" />
+    </Key>
+    <Property Name="IdTipoProposta" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTipoPropostaPai" Type="Int32" />
+    <Property Name="Proposta" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="PropostaDocumento" Relationship="PortalDeFluxoModel.FK_PropostaDocumento_TipoProposta" FromRole="TipoProposta" ToRole="PropostaDocumento" />
+    <NavigationProperty Name="TipoPropostaDocumento" Relationship="PortalDeFluxoModel.FK_TipoPropostaDocumento_TipoProposta" FromRole="TipoProposta" ToRole="TipoPropostaDocumento" />
+    <NavigationProperty Name="AnoContratual" Relationship="PortalDeFluxoModel.FK_AnoContratual_TipoProposta" FromRole="TipoProposta" ToRole="AnoContratual" />
+  </EntityType>
+  <EntityType Name="TipoPropostaDocumento">
+    <Key>
+      <PropertyRef Name="IdTipoPropostaDocumento" />
+    </Key>
+    <Property Name="IdTipoPropostaDocumento" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdItem" Type="Int32" Nullable="false" />
+    <Property Name="IdTipoProposta" Type="Int32" />
+    <Property Name="IdDocumento" Type="Int32" />
+    <Property Name="Tem" Type="Boolean" />
+    <Property Name="Atende" Type="Boolean" />
+    <Property Name="Excecao" Type="Boolean" />
+    <Property Name="Dispensado" Type="Boolean" />
+    <NavigationProperty Name="Documento" Relationship="PortalDeFluxoModel.FK_TipoPropostaDocumento_Documento" FromRole="TipoPropostaDocumento" ToRole="Documento" />
+    <NavigationProperty Name="TipoProposta" Relationship="PortalDeFluxoModel.FK_TipoPropostaDocumento_TipoProposta" FromRole="TipoPropostaDocumento" ToRole="TipoProposta" />
+  </EntityType>
+  <EntityType Name="WFGestaoFluxo_Fluxo">
+    <Key>
+      <PropertyRef Name="CD_SEQ_FLUXO" />
+    </Key>
+    <Property Name="CD_SEQ_FLUXO" Type="Int32" Nullable="false" />
+    <Property Name="CD_ITEM" Type="Int32" Nullable="false" />
+    <Property Name="CD_LISTA" Type="Guid" Nullable="false" />
+    <Property Name="NM_LISTA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_SOLICITACAO" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_IBM" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="NM_RAZAO_SOCIAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_SOLICITANTE" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_STATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_ATIVO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="NM_GA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_GT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DT_ENTRADA" Type="DateTime" Precision="3" />
+    <Property Name="DT_SAIDA" Type="DateTime" Precision="3" />
+    <Property Name="DT_CRIACAO" Type="DateTime" Precision="3" />
+    <Property Name="DT_MODIFICACAO" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="WFGestaoFluxo_Tarefa">
+    <Key>
+      <PropertyRef Name="CD_TAREFA" />
+    </Key>
+    <Property Name="CD_TAREFA" Type="Int32" Nullable="false" />
+    <Property Name="CD_FLUXO" Type="Int32" Nullable="false" />
+    <Property Name="CD_WORKFLOW_ID" Type="Guid" Nullable="false" />
+    <Property Name="CD_LISTA_TAREFA" Type="Guid" Nullable="false" />
+    <Property Name="NR_ESTADO_ID" Type="Int32" Nullable="false" />
+    <Property Name="NR_ACAO_ID" Type="Int32" Nullable="false" />
+    <Property Name="NR_ESTADO_ACAO_ID" Type="Int32" Nullable="false" />
+    <Property Name="SN_FLUXO_ATUAL" Type="Boolean" Nullable="false" />
+    <Property Name="NM_TAREFA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_PAPEL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_RESPONSAVEL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_RESPONSAVEL_ORIGINAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_RESPONSAVEL_LOGIN" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_RESPONSAVEL_LOGIN_ORIGINAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_SUPERVISORES" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="NM_SUPERVISORES_LOGIN" Type="String" MaxLength="1000" FixedLength="false" Unicode="false" />
+    <Property Name="NM_STATUS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NM_COMENTARIOS" Type="String" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Name="SN_DELEGADO_SUPERVISOR" Type="Boolean" />
+    <Property Name="NR_EMAIL_SUPERVISOR" Type="Int32" />
+    <Property Name="NR_EMAIL_RESPONSAVEL" Type="Int32" />
+    <Property Name="NR_SLA_ESPERADO" Type="Int32" />
+    <Property Name="NR_SLA_REAL" Type="Int32" />
+    <Property Name="DT_SLA" Type="DateTime" Precision="3" />
+    <Property Name="DT_SAIDA" Type="DateTime" Precision="3" />
+    <Property Name="DT_CRIACAO" Type="DateTime" Precision="3" />
+    <Property Name="DT_MODIFICACAO" Type="DateTime" Precision="3" />
+    <Property Name="DT_DELEGACAO_PROGRAMADA" Type="DateTime" Precision="3" />
+    <Property Name="CD_ITEM_TAREFA" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_Cidade_Estado">
+    <End Type="PortalDeFluxoModel.Estado" Role="Estado" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.Cidade" Role="Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropostasDocumento_Documento">
+    <End Type="PortalDeFluxoModel.Documento" Role="Documento" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.PropostaDocumento" Role="PropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="IdDocumento" />
+      </Principal>
+      <Dependent Role="PropostaDocumento">
+        <PropertyRef Name="IdDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoPropostaDocumento_Documento">
+    <End Type="PortalDeFluxoModel.Documento" Role="Documento" Multiplicity="0..1" />
+    <End Type="PortalDeFluxoModel.TipoPropostaDocumento" Role="TipoPropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="IdDocumento" />
+      </Principal>
+      <Dependent Role="TipoPropostaDocumento">
+        <PropertyRef Name="IdDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropostaDocumento_TipoProposta">
+    <End Type="PortalDeFluxoModel.TipoProposta" Role="TipoProposta" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.PropostaDocumento" Role="PropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProposta">
+        <PropertyRef Name="IdTipoProposta" />
+      </Principal>
+      <Dependent Role="PropostaDocumento">
+        <PropertyRef Name="IdTipoProposta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoPropostaDocumento_TipoProposta">
+    <End Type="PortalDeFluxoModel.TipoProposta" Role="TipoProposta" Multiplicity="0..1" />
+    <End Type="PortalDeFluxoModel.TipoPropostaDocumento" Role="TipoPropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProposta">
+        <PropertyRef Name="IdTipoProposta" />
+      </Principal>
+      <Dependent Role="TipoPropostaDocumento">
+        <PropertyRef Name="IdTipoProposta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Lista">
+    <Key>
+      <PropertyRef Name="CodigoLista" />
+    </Key>
+    <Property Name="CodigoLista" Type="Guid" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoUrlLista" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoUrlItem" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoUrlTarefa" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="Ambiente2007" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="ListaHist" Relationship="PortalDeFluxoModel.FK_ListaHist_Lista" FromRole="Lista" ToRole="ListaHist" />
+    <NavigationProperty Name="InstanciaFluxo" Relationship="PortalDeFluxoModel.FK_InstanciaFluxo_Lista" FromRole="Lista" ToRole="InstanciaFluxo" />
+  </EntityType>
+  <Association Name="FK_ListaHist_Lista">
+    <End Type="PortalDeFluxoModel.Lista" Role="Lista" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.ListaHist" Role="ListaHist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lista">
+        <PropertyRef Name="CodigoLista" />
+      </Principal>
+      <Dependent Role="ListaHist">
+        <PropertyRef Name="CodigoLista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="AnoContratual">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdProposta" Type="Int32" Nullable="false" />
+    <Property Name="IdTipoProposta" Type="Int32" Nullable="false" />
+    <Property Name="CasoBase" Type="Boolean" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="Ano" Type="Int32" Nullable="false" />
+    <Property Name="Bonificacao" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="BonificacaoPorAno" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoVolumePadrao" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoVolumeExcecao" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="OutrasReceitas" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="OutrasDespesas" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoVolumes" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="OutrosFluxosPositivos" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="OutrosFluxosNegativos" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Diesel" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Otto" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="OleoCombustivel" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Arla" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoFuels" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="AluguelPago" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="AluguelRecebido" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Manutencao" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="MeioAmbiente" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Terrenos" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="EdificacoesPista" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="EdificacoesLoja" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Bombas" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Tanques" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="ImagemRVI" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="EquipamentosLoja" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoLoja" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Gasolina" Type="Decimal" Precision="18" Scale="5" />
+    <Property Name="Etanol" Type="Decimal" Precision="18" Scale="5" />
+    <NavigationProperty Name="TipoProposta" Relationship="PortalDeFluxoModel.FK_AnoContratual_TipoProposta" FromRole="AnoContratual" ToRole="TipoProposta" />
+  </EntityType>
+  <Association Name="FK_AnoContratual_TipoProposta">
+    <End Type="PortalDeFluxoModel.TipoProposta" Role="TipoProposta" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.AnoContratual" Role="AnoContratual" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProposta">
+        <PropertyRef Name="IdTipoProposta" />
+      </Principal>
+      <Dependent Role="AnoContratual">
+        <PropertyRef Name="IdTipoProposta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Lembrete">
+    <Key>
+      <PropertyRef Name="IdLembrete" />
+    </Key>
+    <Property Name="IdLembrete" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdTarefa" Type="Int32" Nullable="false" />
+    <Property Name="EmailPara" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="LoginPara" Type="String" MaxLength="150" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="NomePara" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DataEnvio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CopiarSuperior" Type="Boolean" Nullable="false" />
+    <Property Name="EmailEnviado" Type="Boolean" Nullable="false" />
+    <Property Name="DescricaoAssunto" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoMensagem" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="Tarefa" Relationship="PortalDeFluxoModel.FK_Lembrete_Tarefa" FromRole="Lembrete" ToRole="Tarefa" />
+  </EntityType>
+  <EntityType Name="Tarefa">
+    <Key>
+      <PropertyRef Name="IdTarefa" />
+    </Key>
+    <Property Name="IdTarefa" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdInstanciaFluxo" Type="Int32" Nullable="false" />
+    <Property Name="CodigoTarefa" Type="Guid" />
+    <Property Name="CodigoConfiguracao" Type="Int32" />
+    <Property Name="AprovacaoPor" Type="Int32" />
+    <Property Name="NomeTarefa" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NomeEtapa" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="TipoTarefa" Type="Byte" />
+    <Property Name="DescricaoAreaResponsavel" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="EmailResponsavel" Type="String" Nullable="false" MaxLength="2000" FixedLength="false" Unicode="false" />
+    <Property Name="LoginResponsavel" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NomeResponsavel" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="EmailSuperior" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="LoginSuperior" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="NomeSuperior" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="SLA" Type="Int32" />
+    <Property Name="DataSLA" Type="DateTime" Precision="3" />
+    <Property Name="DataEscalonamento" Type="DateTime" Precision="3" />
+    <Property Name="ComentarioAprovacao" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoAcaoEfetuada" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoAcao" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoAssuntoEmail" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoMensagemEmail" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoAssuntoEmailEscalonamento" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoMensagemEmailEscalonamento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="CopiarSuperior" Type="Boolean" Nullable="false" />
+    <Property Name="EmailEnviado" Type="Boolean" Nullable="false" />
+    <Property Name="TarefaCompleta" Type="Boolean" Nullable="false" />
+    <Property Name="TarefaEscalonada" Type="Boolean" Nullable="false" />
+    <Property Name="NomeCompletadoPor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LoginCompletadoPor" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DataFinalizado" Type="DateTime" Precision="3" />
+    <Property Name="DataAtribuido" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="CodigoTarefaSP" Type="Int32" />
+    <Property Name="CodigoListaTarefa" Type="Guid" />
+    <Property Name="CodigoHumanWorkflowID" Type="Int32" />
+    <Property Name="DescricaoAcaoFinalizarEtapa" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="AprovadoPorEmail" Type="Boolean" />
+    <Property Name="IndexAprovacao" Type="Int32" />
+    <Property Name="AprovacoesAtuais" Type="Boolean" />
+    <Property Name="IdTarefaPai" Type="Int32" />
+    <Property Name="EnviarPdf" Type="Boolean" />
+    <Property Name="IndexHeadLineFinal" Type="Int32" />
+    <Property Name="ParametrosUrl" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Lembrete" Relationship="PortalDeFluxoModel.FK_Lembrete_Tarefa" FromRole="Tarefa" ToRole="Lembrete" />
+    <NavigationProperty Name="Tarefa1" Relationship="PortalDeFluxoModel.FK_Tarefa_Discussao" FromRole="Tarefa" ToRole="Tarefa1" />
+    <NavigationProperty Name="Tarefa2" Relationship="PortalDeFluxoModel.FK_Tarefa_Discussao" FromRole="Tarefa1" ToRole="Tarefa" />
+    <NavigationProperty Name="TarefaHist" Relationship="PortalDeFluxoModel.FK_TarefaHist_Tarefa" FromRole="Tarefa" ToRole="TarefaHist" />
+    <NavigationProperty Name="InstanciaFluxo" Relationship="PortalDeFluxoModel.FK_Tarefa_InstanciaFluxo" FromRole="Tarefa" ToRole="InstanciaFluxo" />
+    <Property Name="AprovacaoAutomatica" Type="Boolean" />
+    <Property Name="DescricaoRespostaAutomatica" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="AprovadoAutomaticamente" Type="Boolean" />
+    <Property Name="ComentarioAprovacaoAutomatica" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_Lembrete_Tarefa">
+    <End Type="PortalDeFluxoModel.Tarefa" Role="Tarefa" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.Lembrete" Role="Lembrete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarefa">
+        <PropertyRef Name="IdTarefa" />
+      </Principal>
+      <Dependent Role="Lembrete">
+        <PropertyRef Name="IdTarefa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarefa_Discussao">
+    <End Type="PortalDeFluxoModel.Tarefa" Role="Tarefa" Multiplicity="0..1" />
+    <End Type="PortalDeFluxoModel.Tarefa" Role="Tarefa1" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarefa">
+        <PropertyRef Name="IdTarefa" />
+      </Principal>
+      <Dependent Role="Tarefa1">
+        <PropertyRef Name="IdTarefaPai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TarefaHist_Tarefa">
+    <End Type="PortalDeFluxoModel.Tarefa" Role="Tarefa" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.TarefaHist" Role="TarefaHist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarefa">
+        <PropertyRef Name="IdTarefa" />
+      </Principal>
+      <Dependent Role="TarefaHist">
+        <PropertyRef Name="IdTarefa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="RelatorioOperacionalTarefa">
+    <Key>
+      <PropertyRef Name="Fluxo" />
+      <PropertyRef Name="Tabela" />
+    </Key>
+    <Property Name="Fluxo" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Tabela" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IdTipoProposta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IdProposta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TituloProposta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Combo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RazaoSocial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="IBM" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="SiteCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="GT" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="GR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Diretor" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CDR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="GDR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="CodigoLista" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="InstanciaFluxo">
+    <Key>
+      <PropertyRef Name="IdInstanciaFluxo" />
+    </Key>
+    <Property Name="IdInstanciaFluxo" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoInstanciaFluxo" Type="Guid" />
+    <Property Name="CodigoFluxo" Type="Guid" />
+    <Property Name="CodigoLista" Type="Guid" Nullable="false" />
+    <Property Name="CodigoItem" Type="Int32" Nullable="false" />
+    <Property Name="StatusFluxo" Type="Int32" />
+    <Property Name="NomeFluxo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NomeEtapa" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NomeSolicitacao" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="NomeSolicitante" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="LoginSolicitante" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="DataInicio" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DataFinalizado" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="CodigoInstanceID" Type="Int32" />
+    <Property Name="CodigoWorkflowProgressID" Type="Int32" />
+    <Property Name="NumeroTentativaInicio" Type="Int32" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="ErroCancelado" Type="Boolean" />
+    <Property Name="FluxoReprovado" Type="Boolean" />
+    <Property Name="EtapaParalela" Type="Boolean" />
+    <Property Name="LoginGerenteTerritorio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeGerenteTerritorio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EmailGerenteTerritorio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginDiretorVendas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeDiretorVendas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EmailDiretorVendas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginGdr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeGdr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EmailGdr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginGerenteRegiao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeGerenteRegiao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EmailGerenteRegiao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginCdr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeCdr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="EmailCdr" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataRestartWorkflow" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="Lista" Relationship="PortalDeFluxoModel.FK_InstanciaFluxo_Lista" FromRole="InstanciaFluxo" ToRole="Lista" />
+    <NavigationProperty Name="Tarefa" Relationship="PortalDeFluxoModel.FK_Tarefa_InstanciaFluxo" FromRole="InstanciaFluxo" ToRole="Tarefa" />
+  </EntityType>
+  <Association Name="FK_InstanciaFluxo_Lista">
+    <End Type="PortalDeFluxoModel.Lista" Role="Lista" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.InstanciaFluxo" Role="InstanciaFluxo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lista">
+        <PropertyRef Name="CodigoLista" />
+      </Principal>
+      <Dependent Role="InstanciaFluxo">
+        <PropertyRef Name="CodigoLista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarefa_InstanciaFluxo">
+    <End Type="PortalDeFluxoModel.InstanciaFluxo" Role="InstanciaFluxo" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.Tarefa" Role="Tarefa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstanciaFluxo">
+        <PropertyRef Name="IdInstanciaFluxo" />
+      </Principal>
+      <Dependent Role="Tarefa">
+        <PropertyRef Name="IdInstanciaFluxo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="GrupoSP">
+    <Key>
+      <PropertyRef Name="IdGrupoSP" />
+    </Key>
+    <Property Name="IdGrupoSP" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="GrupoUsuariosSP" Relationship="PortalDeFluxoModel.FK_GrupoUsuariosSP_GrupoSP" FromRole="GrupoSP" ToRole="GrupoUsuariosSP" />
+  </EntityType>
+  <EntityType Name="GrupoUsuariosSP">
+    <Key>
+      <PropertyRef Name="IdGrupoUsuariosSP" />
+    </Key>
+    <Property Name="IdGrupoUsuariosSP" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdUsuarioSP" Type="Int32" Nullable="false" />
+    <Property Name="IdGrupoSP" Type="Int32" Nullable="false" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="GrupoSP" Relationship="PortalDeFluxoModel.FK_GrupoUsuariosSP_GrupoSP" FromRole="GrupoUsuariosSP" ToRole="GrupoSP" />
+    <NavigationProperty Name="UsuarioSP" Relationship="PortalDeFluxoModel.FK_GrupoUsuariosSP_UsuariosSP" FromRole="GrupoUsuariosSP" ToRole="UsuarioSP" />
+  </EntityType>
+  <EntityType Name="UsuarioSP">
+    <Key>
+      <PropertyRef Name="IdUsuarioSP" />
+    </Key>
+    <Property Name="IdUsuarioSP" Type="Int32" Nullable="false" />
+    <Property Name="Nome" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="LoginComClaims" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Login" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LookupValue" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SiteAdmin" Type="Boolean" Nullable="false" />
+    <Property Name="ContaSistema" Type="Boolean" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="GrupoUsuariosSP" Relationship="PortalDeFluxoModel.FK_GrupoUsuariosSP_UsuariosSP" FromRole="UsuarioSP" ToRole="GrupoUsuariosSP" />
+  </EntityType>
+  <Association Name="FK_GrupoUsuariosSP_GrupoSP">
+    <End Type="PortalDeFluxoModel.GrupoSP" Role="GrupoSP" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.GrupoUsuariosSP" Role="GrupoUsuariosSP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoSP">
+        <PropertyRef Name="IdGrupoSP" />
+      </Principal>
+      <Dependent Role="GrupoUsuariosSP">
+        <PropertyRef Name="IdGrupoSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrupoUsuariosSP_UsuariosSP">
+    <End Type="PortalDeFluxoModel.UsuarioSP" Role="UsuarioSP" Multiplicity="1" />
+    <End Type="PortalDeFluxoModel.GrupoUsuariosSP" Role="GrupoUsuariosSP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioSP">
+        <PropertyRef Name="IdUsuarioSP" />
+      </Principal>
+      <Dependent Role="GrupoUsuariosSP">
+        <PropertyRef Name="IdUsuarioSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SAEParametros">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sistema" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Direcao" Type="Int32" />
+    <Property Name="Celula" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Planilha" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CampoSistema" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TipoInformacao" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

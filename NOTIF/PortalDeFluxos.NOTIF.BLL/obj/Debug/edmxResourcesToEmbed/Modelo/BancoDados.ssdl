@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoDadosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ListaNOTIF">
+    <Key>
+      <PropertyRef Name="CodigoItem" />
+    </Key>
+    <Property Name="CodigoItem" Type="int" Nullable="false" />
+    <Property Name="CodigoLista" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="TituloProposta" Type="varchar" MaxLength="255" />
+    <Property Name="DescricaoRazaoSocial" Type="varchar" MaxLength="255" />
+    <Property Name="NumeroIBM" Type="int" />
+    <Property Name="NumeroSiteCode" Type="int" />
+    <Property Name="DescricaoEstadoAtualFluxo" Type="varchar" MaxLength="255" />
+    <Property Name="BuscaDocumentos" Type="bit" />
+    <Property Name="ContratoPadrao" Type="bit" />
+    <Property Name="DescricaoEtapa" Type="varchar" MaxLength="255" />
+    <Property Name="LoginGerenteTerritorio" Type="varchar" MaxLength="255" />
+    <Property Name="LoginGerenteRegiao" Type="varchar" MaxLength="255" />
+    <Property Name="LoginDiretorVendas" Type="varchar" MaxLength="255" />
+    <Property Name="LoginCDR" Type="varchar" MaxLength="255" />
+    <Property Name="LoginGDR" Type="varchar" MaxLength="255" />
+    <Property Name="UtilizaZoneamentoPadrao" Type="bit" />
+    <Property Name="UtilizaZoneamentoCdr" Type="bit" />
+    <Property Name="UtilizaZoneamentoDiretor" Type="bit" />
+    <Property Name="UtilizaZoneamentoGdr" Type="bit" />
+    <Property Name="UtilizaZoneamentoGR" Type="bit" />
+    <Property Name="UtilizaZoneamentoGT" Type="bit" />
+    <Property Name="EnvolvimentoPlanejamento" Type="bit" />
+    <Property Name="AprovacaoGRDV" Type="bit" />
+    <Property Name="NotificacaoPadrao" Type="bit" />
+    <Property Name="DataNotificacao" Type="datetime" />
+    <Property Name="Farol" Type="varchar" MaxLength="50" />
+    <Property Name="Mercado" Type="int" />
+    <Property Name="CNPJ" Type="char" MaxLength="18" />
+    <Property Name="Endereco" Type="varchar" MaxLength="255" />
+    <Property Name="Bairro" Type="varchar" MaxLength="255" />
+    <Property Name="Cep" Type="varchar" MaxLength="9" />
+    <Property Name="UF" Type="varchar" MaxLength="255" />
+    <Property Name="Cidade" Type="varchar" MaxLength="255" />
+    <Property Name="NomeContrato" Type="varchar" MaxLength="255" />
+    <Property Name="NumeroContrato" Type="varchar" MaxLength="255" />
+    <Property Name="TipoNotificacao" Type="int" />
+    <Property Name="OutroTipoNotificacao" Type="varchar" MaxLength="255" />
+    <Property Name="StatusLoja" Type="varchar" MaxLength="255" />
+    <Property Name="Consumo" Type="decimal" Precision="15" Scale="3" />
+    <Property Name="Comentario" Type="varchar" MaxLength="5000" />
+    <Property Name="Juridico_FasesJudicializacao" Type="int" />
+    <Property Name="Juridico_TipoAcaoJudicial" Type="int" />
+    <Property Name="Juridico_Observacao" Type="varchar" MaxLength="5000" />
+    <Property Name="Juridico_DataAcao" Type="datetime" />
+    <Property Name="RelacoesSetoriais_FaseDenuncia" Type="varchar" MaxLength="255" />
+    <Property Name="RelacoesSetoriais_OrgaoDenuncia" Type="varchar" MaxLength="255" />
+    <Property Name="RelacoesSetoriais_Observacao" Type="varchar" MaxLength="5000" />
+    <Property Name="RelacoesSetoriais_Data" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ListaNOTIFNotificacoes">
+    <Key>
+      <PropertyRef Name="IdNotificacao" />
+    </Key>
+    <Property Name="IdNotificacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoItem" Type="int" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="NotifAtiva" Type="bit" Nullable="false" />
+    <Property Name="NumeroNotificacao" Type="int" Nullable="false" />
+    <Property Name="Status" Type="int" />
+    <Property Name="Observacao" Type="varchar" MaxLength="5000" />
+    <Property Name="DataInicioContrato" Type="datetime" />
+    <Property Name="DataFimContrato" Type="datetime" />
+    <Property Name="DataNotificacao" Type="datetime" />
+    <Property Name="AprovacaoGRDV" Type="bit" />
+    <Property Name="EnvolvimentoPlanejamento" Type="bit" />
+    <Property Name="GrauNotificacao" Type="int" />
+    <Property Name="FormaEnvio" Type="varchar" MaxLength="255" />
+    <Property Name="NotificacaoPadrao" Type="bit" />
+  </EntityType>
+  <Association Name="FK_NOTIFICACOES_LISTANOTIF">
+    <End Role="ListaNOTIF" Type="Self.ListaNOTIF" Multiplicity="1" />
+    <End Role="ListaNOTIFNotificacoes" Type="Self.ListaNOTIFNotificacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListaNOTIF">
+        <PropertyRef Name="CodigoItem" />
+      </Principal>
+      <Dependent Role="ListaNOTIFNotificacoes">
+        <PropertyRef Name="CodigoItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BancoDadosModelStoreContainer">
+    <EntitySet Name="ListaNOTIF" EntityType="Self.ListaNOTIF" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListaNOTIFNotificacoes" EntityType="Self.ListaNOTIFNotificacoes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_NOTIFICACOES_LISTANOTIF" Association="Self.FK_NOTIFICACOES_LISTANOTIF">
+      <End Role="ListaNOTIF" EntitySet="ListaNOTIF" />
+      <End Role="ListaNOTIFNotificacoes" EntitySet="ListaNOTIFNotificacoes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

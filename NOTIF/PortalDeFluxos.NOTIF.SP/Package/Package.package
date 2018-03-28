@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="ac0ec536-5cbc-4ba2-821a-23bd387645c5" solutionId="ac0ec536-5cbc-4ba2-821a-23bd387645c5" resetWebServer="false" sharePointProductVersion="15.0" name="PortalDeFluxos.NOTIF.SP" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <projectOutputAssembly location="PortalDeFluxos.NOTIF.BLL.dll" deploymentTarget="GlobalAssemblyCache" projectPath="..\PortalDeFluxos.NOTIF.BLL\PortalDeFluxos.NOTIF.BLL.csproj" />
+  </assemblies>
+  <features>
+    <featureReference itemId="cd748c02-bd8d-49c2-8bd9-f7d02421f161" />
+    <featureReference itemId="5e691fb2-b928-4c76-889c-9ea3c7e7818a" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="6e1fdde2-5c0e-4b0a-9967-663a847ef410" />
+    <projectItemReference itemId="2f7b7f88-5045-420f-9818-4972a456565f" />
+  </projectItems>
+</package>

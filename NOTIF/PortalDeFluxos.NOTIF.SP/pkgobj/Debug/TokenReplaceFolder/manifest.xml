@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Solution xmlns="http://schemas.microsoft.com/sharepoint/" SolutionId="ac0ec536-5cbc-4ba2-821a-23bd387645c5" SharePointProductVersion="15.0">
+  <Assemblies>
+    <Assembly Location="PortalDeFluxos.NOTIF.BLL.dll" DeploymentTarget="GlobalAssemblyCache" />
+    <Assembly Location="PortalDeFluxos.NOTIF.SP.dll" DeploymentTarget="GlobalAssemblyCache" />
+  </Assemblies>
+  <TemplateFiles>
+    <TemplateFile Location="ControlTemplates\PortalDeFluxos.NOTIF.SP\ucRelatorio.ascx" />
+    <TemplateFile Location="ControlTemplates\PortalDeFluxos.NOTIF.SP\ucAprovacaoDelegacaoTarefa.ascx" />
+    <TemplateFile Location="ControlTemplates\PortalDeFluxos.NOTIF.SP\ucNOTIF.ascx" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\AprovacaoDelegacaoTarefa\JS\AprovacaoDelegacaoTarefaNOTIF.js" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\cancel.png" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\edit.png" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\FarolAmarelo.png" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\FarolVerde.png" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\FarolVermelho.png" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\less.png" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\remove.gif" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\Img\save.png" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\JS\notif.list.js" />
+    <TemplateFile Location="Layouts\PortalDeFluxos.NOTIF.SP\NOTIF\JS\notif.main.js" />
+  </TemplateFiles>
+  <FeatureManifests>
+    <FeatureManifest Location="PortalDeFluxos.NOTIF.SP_EventReceiver\Feature.xml" />
+    <FeatureManifest Location="PortalDeFluxos.NOTIF.SP_Fluxo\Feature.xml" />
+  </FeatureManifests>
+</Solution>

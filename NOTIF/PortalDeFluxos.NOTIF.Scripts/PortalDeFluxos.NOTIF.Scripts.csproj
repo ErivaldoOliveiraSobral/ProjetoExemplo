@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B7054478-19B3-4563-BC69-68446E59505A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PortalDeFluxos.NOTIF.Scripts</RootNamespace>
+    <AssemblyName>PortalDeFluxos.NOTIF.Scripts</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Core\Deploy\00-BKP_Listas.bat" />
+    <None Include="Core\Deploy\00-BKP_Listas.ps1" />
+    <None Include="Core\Deploy\00-Deploy WFManager.bat" />
+    <None Include="Core\Deploy\00-Deploy WFManager.ps1" />
+    <None Include="Core\Deploy\000-DesativarJobServicos.bat" />
+    <None Include="Core\Deploy\000-DesativarJobServicos.ps1" />
+    <None Include="Core\Deploy\01-ApagarListasExistentes.bat" />
+    <None Include="Core\Deploy\01-ApagarListasExistentes.ps1" />
+    <None Include="Core\Deploy\02-ImportarListas.bat" />
+    <None Include="Core\Deploy\02-ImportarListas.ps1" />
+    <None Include="Core\Deploy\04-AtualizarAplicacao.bat" />
+    <None Include="Core\Deploy\04-AtualizarAplicacao.ps1" />
+    <None Include="Core\Deploy\05-ImportarRolesLista.bat" />
+    <None Include="Core\Deploy\05-ImportarRolesLista.ps1" />
+    <None Include="Core\Deploy\06-CriarBibliotecaAnexosPropostas.bat" />
+    <None Include="Core\Deploy\06-CriarBibliotecaAnexosPropostas.ps1" />
+    <None Include="Core\Deploy\07-ConfiguracaoGrupoOwner.bat" />
+    <None Include="Core\Deploy\07-ConfiguracaoGrupoOwner.ps1" />
+    <None Include="Core\Deploy\99-AtivarJobServicos.bat" />
+    <None Include="Core\Deploy\99-AtivarJobServicos.ps1" />
+    <None Include="Core\Deploy\999-AplicarGruposRolesPaginas.bat" />
+    <None Include="Core\Deploy\999-AplicarGruposRolesPaginas.ps1" />
+    <None Include="Core\Deploy\999-AtualizarQuickLaunch.bat" />
+    <None Include="Core\Deploy\999-AtualizarQuickLaunch.ps1" />
+    <None Include="Core\Deploy\999-CriaSiteServico.bat" />
+    <None Include="Core\Deploy\999-CriaSiteServico.ps1" />
+    <None Include="Core\Deploy\CSV\GruposLista.csv" />
+    <None Include="Core\Deploy\CSV\GruposListaArmazen.csv" />
+    <None Include="Core\Deploy\CSV\GruposListaContrato.csv" />
+    <None Include="Core\Deploy\CSV\GruposSharepoint.csv" />
+    <None Include="Core\Deploy\CSV\ListasBackup.csv" />
+    <None Include="Core\Deploy\CSV\ListasDeletar.csv" />
+    <None Include="Core\Deploy\DLLs\servicos.zip" />
+    <None Include="Core\Deploy\Listas\01-FormularioTeste2.cmp" />
+    <None Include="Core\Deploy\Listas\02-FormularioTeste.cmp" />
+    <None Include="Core\Deploy\WSP\PortalDeFluxos.RNIP.SP.wsp" />
+    <None Include="Core\Helpers\AtualizarAplicacao.ps1" />
+    <None Include="Core\Helpers\ExportLists.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\01-Deploy WFManager.bat" />
+    <None Include="Core\Instalacao\DEPLOY\01-Deploy WFManager.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\02-AtualizarAplicacao.bat" />
+    <None Include="Core\Instalacao\DEPLOY\02-AtualizarAplicacao.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\02-ConfigurarParametros_Servicos.bat" />
+    <None Include="Core\Instalacao\DEPLOY\02-ConfigurarParametros_Servicos.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\03-ApagarListasExistentes.bat" />
+    <None Include="Core\Instalacao\DEPLOY\03-ApagarListasExistentes.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\04-CriarGruposRoles.bat" />
+    <None Include="Core\Instalacao\DEPLOY\04-CriarGruposRoles.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\05-ImportarListasComRoles.bat" />
+    <None Include="Core\Instalacao\DEPLOY\05-ImportarListasComRoles.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\06-AtualizacaoAprovHeadline.bat" />
+    <None Include="Core\Instalacao\DEPLOY\06-AtualizacaoAprovHeadline.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\06-CriarSiteAnexosPropostas.bat" />
+    <None Include="Core\Instalacao\DEPLOY\06-CriarSiteAnexosPropostas.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\07-AtualizaConfigFluxos.bat" />
+    <None Include="Core\Instalacao\DEPLOY\07-AtualizaConfigFluxos.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\08-ConfiguracaoPdf.bat" />
+    <None Include="Core\Instalacao\DEPLOY\08-ConfiguracaoPdf.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\09-ConfiguracaoSessionAppFrabic.bat" />
+    <None Include="Core\Instalacao\DEPLOY\09-ConfiguracaoSessionAppFrabic.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\10-ConfiguracaoGrupoOwner.bat" />
+    <None Include="Core\Instalacao\DEPLOY\10-ConfiguracaoGrupoOwner.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\11-AtualizaLembreteEmails .bat" />
+    <None Include="Core\Instalacao\DEPLOY\11-AtualizaLembreteEmails .ps1" />
+    <None Include="Core\Instalacao\DEPLOY\12-ConfiguracaoAmbiente.bat" />
+    <None Include="Core\Instalacao\DEPLOY\12-ConfiguracaoAmbiente.ps1" />
+    <None Include="Core\Instalacao\DEPLOY\CSV\AprovHeadLineGrupos.csv" />
+    <None Include="Core\Instalacao\DEPLOY\CSV\ConfigFluxosGrupos.csv" />
+    <None Include="Core\Instalacao\DEPLOY\CSV\GruposSharepoint.csv" />
+    <None Include="Core\Instalacao\DEPLOY\CSV\ListasBackup.csv" />
+    <None Include="Core\Instalacao\DEPLOY\CSV\ListasDeletar.csv" />
+    <None Include="Core\Instalacao\DEPLOY\CSV\TemplateEmails.csv" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\00-Fluxos.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\01-RaizenAprovacoesHeadlineSize.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\02-HeadlineSizePlanejamento.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\03-HeadlineSizeVendas.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\04-HeadlineSizeFinanceiroB2B.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\05-HeadlineSizeFinanceiro.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\06-RaizenTemplateEmails.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\07-RaizenLembretes.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\08-RaizenConfiguracoesFluxo.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\Listas\09-RaizenUserControl.cmp" />
+    <None Include="Core\Instalacao\DEPLOY\WSP\PortalDeFluxos.Core.SP.wsp" />
+    <None Include="Core\TemplateForm.stp" />
+    <None Include="Core\Teste\Deploy\00-BKP_Listas.bat" />
+    <None Include="Core\Teste\Deploy\00-BKP_Listas.ps1" />
+    <None Include="Core\Teste\Deploy\01-ApagarListasExistentes.bat" />
+    <None Include="Core\Teste\Deploy\01-ApagarListasExistentes.ps1" />
+    <None Include="Core\Teste\Deploy\02-ImportarListas.bat" />
+    <None Include="Core\Teste\Deploy\02-ImportarListas.ps1" />
+    <None Include="Core\Teste\Deploy\05-CriarBibliotecaAnexosPropostas.bat" />
+    <None Include="Core\Teste\Deploy\05-CriarBibliotecaAnexosPropostas.sql\05-CriarBibliotecaAnexosPropostas.ps1" />
+    <None Include="Core\Teste\Deploy\CSV\ListasBackup.csv" />
+    <None Include="Core\Teste\Deploy\CSV\ListasDeletar.csv" />
+    <None Include="Core\Teste\Deploy\Listas\01-FormularioTeste2.cmp" />
+    <None Include="Core\Teste\Deploy\Listas\02-FormularioTeste.cmp" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\01-ImportarListas.bat" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\01-ImportarListas.ps1" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\02-AtualizarAplicacao.bat" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\02-AtualizarAplicacao.ps1" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\03-ImportarRolesLista.bat" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\03-ImportarRolesLista.ps1" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\04-CriarBibliotecaAnexosPropostas.bat" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\04-CriarBibliotecaAnexosPropostas.ps1" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\CSV\GruposListaNOTIF.csv" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\Listas\01-NOTIF.cmp" />
+    <None Include="Deploy\20170815_RdM31703_E1.4\DEPLOY\WSP\PortalDeFluxos.NOTIF.SP.wsp" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Core\Deploy\DLLs\AllowedTypes.xml" />
+    <Content Include="Core\Deploy\DLLs\ImapX.dll" />
+    <Content Include="Core\Deploy\DLLs\PortalDeFluxos.Core.ActivityLibrary.dll" />
+    <Content Include="Core\Deploy\DLLs\PortalDeFluxos.Core.BLL.dll" />
+    <Content Include="Core\Instalacao\DATABASE\01-CREATE_DROP_TABLES.sql" />
+    <Content Include="Core\Instalacao\DATABASE\02-CREATE_DROP_PROC.sql" />
+    <Content Include="Core\Instalacao\DATABASE\03-DATA.sql" />
+    <Content Include="Core\Instalacao\DEPLOY\DLLs\AllowedTypes.xml" />
+    <Content Include="Core\Instalacao\DEPLOY\DLLs\ImapX.dll" />
+    <Content Include="Core\Instalacao\DEPLOY\DLLs\PortalDeFluxos.Core.ActivityLibrary.dll" />
+    <Content Include="Core\Instalacao\DEPLOY\DLLs\PortalDeFluxos.Core.BLL.dll" />
+    <Content Include="Core\Teste\DataBase\Scripts\01-dbo.FormularioTesteTipoProposta.Table.sql" />
+    <Content Include="Core\Teste\DataBase\Scripts\02-dbo.FormularioTesteAba2.Table.sql" />
+    <Content Include="Core\Teste\DataBase\Scripts\03-dbo.ListaFormularioTeste.Table.sql" />
+    <Content Include="Core\Teste\DataBase\Scripts\04-dbo.FormularioTesteAba2.Table_Update.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\08-CenarioTeste.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\07-ROT_NOTIF.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\06-Update-Servicos.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\05-spConsultarRelatorioNOTIF.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\04-Parametro_EmailAttachment.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\03-EventReceivers.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\02-ListaNOTIFNotificacoes.sql" />
+    <Content Include="Deploy\20170815_RdM31703_E1.4\DATABASE\Scripts\01-Create-ListaNOTIF.sql" />
+    <Content Include="raizen-logotipo.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

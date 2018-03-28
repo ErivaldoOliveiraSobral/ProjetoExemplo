@@ -1,0 +1,336 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BancoDadosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ListaNOTIF">
+          <Key>
+            <PropertyRef Name="CodigoItem" />
+          </Key>
+          <Property Name="CodigoItem" Type="int" Nullable="false" />
+          <Property Name="CodigoLista" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+          <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+          <Property Name="DataAlteracao" Type="datetime" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+          <Property Name="TituloProposta" Type="varchar" MaxLength="255" />
+          <Property Name="DescricaoRazaoSocial" Type="varchar" MaxLength="255" />
+          <Property Name="NumeroIBM" Type="int" />
+          <Property Name="NumeroSiteCode" Type="int" />
+          <Property Name="DescricaoEstadoAtualFluxo" Type="varchar" MaxLength="255" />
+          <Property Name="BuscaDocumentos" Type="bit" />
+          <Property Name="ContratoPadrao" Type="bit" />
+          <Property Name="DescricaoEtapa" Type="varchar" MaxLength="255" />
+          <Property Name="LoginGerenteTerritorio" Type="varchar" MaxLength="255" />
+          <Property Name="LoginGerenteRegiao" Type="varchar" MaxLength="255" />
+          <Property Name="LoginDiretorVendas" Type="varchar" MaxLength="255" />
+          <Property Name="LoginCDR" Type="varchar" MaxLength="255" />
+          <Property Name="LoginGDR" Type="varchar" MaxLength="255" />
+          <Property Name="UtilizaZoneamentoPadrao" Type="bit" />
+          <Property Name="UtilizaZoneamentoCdr" Type="bit" />
+          <Property Name="UtilizaZoneamentoDiretor" Type="bit" />
+          <Property Name="UtilizaZoneamentoGdr" Type="bit" />
+          <Property Name="UtilizaZoneamentoGR" Type="bit" />
+          <Property Name="UtilizaZoneamentoGT" Type="bit" />
+          <Property Name="EnvolvimentoPlanejamento" Type="bit" />
+          <Property Name="AprovacaoGRDV" Type="bit" />
+          <Property Name="NotificacaoPadrao" Type="bit" />
+          <Property Name="DataNotificacao" Type="datetime" />
+          <Property Name="Farol" Type="varchar" MaxLength="50" />
+          <Property Name="Mercado" Type="int" />
+          <Property Name="CNPJ" Type="char" MaxLength="18" />
+          <Property Name="Endereco" Type="varchar" MaxLength="255" />
+          <Property Name="Bairro" Type="varchar" MaxLength="255" />
+          <Property Name="Cep" Type="varchar" MaxLength="9" />
+          <Property Name="UF" Type="varchar" MaxLength="255" />
+          <Property Name="Cidade" Type="varchar" MaxLength="255" />
+          <Property Name="NomeContrato" Type="varchar" MaxLength="255" />
+          <Property Name="NumeroContrato" Type="varchar" MaxLength="255" />
+          <Property Name="TipoNotificacao" Type="int" />
+          <Property Name="OutroTipoNotificacao" Type="varchar" MaxLength="255" />
+          <Property Name="StatusLoja" Type="varchar" MaxLength="255" />
+          <Property Name="Consumo" Type="decimal" Precision="15" Scale="3" />
+          <Property Name="Comentario" Type="varchar" MaxLength="5000" />
+          <Property Name="Juridico_FasesJudicializacao" Type="int" />
+          <Property Name="Juridico_TipoAcaoJudicial" Type="int" />
+          <Property Name="Juridico_Observacao" Type="varchar" MaxLength="5000" />
+          <Property Name="Juridico_DataAcao" Type="datetime" />
+          <Property Name="RelacoesSetoriais_FaseDenuncia" Type="varchar" MaxLength="255" />
+          <Property Name="RelacoesSetoriais_OrgaoDenuncia" Type="varchar" MaxLength="255" />
+          <Property Name="RelacoesSetoriais_Observacao" Type="varchar" MaxLength="5000" />
+          <Property Name="RelacoesSetoriais_Data" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ListaNOTIFNotificacoes">
+          <Key>
+            <PropertyRef Name="IdNotificacao" />
+          </Key>
+          <Property Name="IdNotificacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoItem" Type="int" Nullable="false" />
+          <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+          <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+          <Property Name="DataAlteracao" Type="datetime" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+          <Property Name="NotifAtiva" Type="bit" Nullable="false" />
+          <Property Name="NumeroNotificacao" Type="int" Nullable="false" />
+          <Property Name="Status" Type="int" />
+          <Property Name="Observacao" Type="varchar" MaxLength="5000" />
+          <Property Name="DataInicioContrato" Type="datetime" />
+          <Property Name="DataFimContrato" Type="datetime" />
+          <Property Name="DataNotificacao" Type="datetime" />
+          <Property Name="AprovacaoGRDV" Type="bit" />
+          <Property Name="EnvolvimentoPlanejamento" Type="bit" />
+          <Property Name="GrauNotificacao" Type="int" />
+          <Property Name="FormaEnvio" Type="varchar" MaxLength="255" />
+          <Property Name="NotificacaoPadrao" Type="bit" />
+        </EntityType>
+        <Association Name="FK_NOTIFICACOES_LISTANOTIF">
+          <End Role="ListaNOTIF" Type="Self.ListaNOTIF" Multiplicity="1" />
+          <End Role="ListaNOTIFNotificacoes" Type="Self.ListaNOTIFNotificacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListaNOTIF">
+              <PropertyRef Name="CodigoItem" />
+            </Principal>
+            <Dependent Role="ListaNOTIFNotificacoes">
+              <PropertyRef Name="CodigoItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BancoDadosModelStoreContainer">
+          <EntitySet Name="ListaNOTIF" EntityType="Self.ListaNOTIF" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ListaNOTIFNotificacoes" EntityType="Self.ListaNOTIFNotificacoes" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_NOTIFICACOES_LISTANOTIF" Association="Self.FK_NOTIFICACOES_LISTANOTIF">
+            <End Role="ListaNOTIF" EntitySet="ListaNOTIF" />
+            <End Role="ListaNOTIFNotificacoes" EntitySet="ListaNOTIFNotificacoes" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BancoDadosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BancoDados" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ListaNOTIF" EntityType="BancoDadosModel.ListaNOTIF" />
+          <EntitySet Name="ListaNOTIFNotificacoes" EntityType="BancoDadosModel.ListaNOTIFNotificacoes" />
+          <AssociationSet Name="FK_NOTIFICACOES_LISTANOTIF" Association="BancoDadosModel.FK_NOTIFICACOES_LISTANOTIF">
+            <End Role="ListaNOTIF" EntitySet="ListaNOTIF" />
+            <End Role="ListaNOTIFNotificacoes" EntitySet="ListaNOTIFNotificacoes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ListaNOTIF">
+          <Key>
+            <PropertyRef Name="CodigoItem" />
+          </Key>
+          <Property Name="CodigoItem" Type="Int32" Nullable="false" />
+          <Property Name="CodigoLista" Type="Guid" Nullable="false" />
+          <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="TituloProposta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DescricaoRazaoSocial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroIBM" Type="Int32" />
+          <Property Name="NumeroSiteCode" Type="Int32" />
+          <Property Name="DescricaoEstadoAtualFluxo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="BuscaDocumentos" Type="Boolean" />
+          <Property Name="ContratoPadrao" Type="Boolean" />
+          <Property Name="DescricaoEtapa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LoginGerenteTerritorio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LoginGerenteRegiao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LoginDiretorVendas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LoginCDR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="LoginGDR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="UtilizaZoneamentoPadrao" Type="Boolean" />
+          <Property Name="UtilizaZoneamentoCdr" Type="Boolean" />
+          <Property Name="UtilizaZoneamentoDiretor" Type="Boolean" />
+          <Property Name="UtilizaZoneamentoGdr" Type="Boolean" />
+          <Property Name="UtilizaZoneamentoGR" Type="Boolean" />
+          <Property Name="UtilizaZoneamentoGT" Type="Boolean" />
+          <Property Name="EnvolvimentoPlanejamento" Type="Boolean" />
+          <Property Name="AprovacaoGRDV" Type="Boolean" />
+          <Property Name="NotificacaoPadrao" Type="Boolean" />
+          <Property Name="DataNotificacao" Type="DateTime" Precision="3" />
+          <Property Name="Farol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Mercado" Type="Int32" />
+          <Property Name="CNPJ" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+          <Property Name="Endereco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Bairro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cep" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+          <Property Name="UF" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Cidade" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NomeContrato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NumeroContrato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="TipoNotificacao" Type="Int32" />
+          <Property Name="OutroTipoNotificacao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="StatusLoja" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Consumo" Type="Decimal" Precision="15" Scale="3" />
+          <Property Name="Comentario" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Juridico_FasesJudicializacao" Type="Int32" />
+          <Property Name="Juridico_TipoAcaoJudicial" Type="Int32" />
+          <Property Name="Juridico_Observacao" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="Juridico_DataAcao" Type="DateTime" Precision="3" />
+          <Property Name="RelacoesSetoriais_FaseDenuncia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RelacoesSetoriais_OrgaoDenuncia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RelacoesSetoriais_Observacao" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="RelacoesSetoriais_Data" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ListaNOTIFNotificacoes" Relationship="BancoDadosModel.FK_NOTIFICACOES_LISTANOTIF" FromRole="ListaNOTIF" ToRole="ListaNOTIFNotificacoes" />
+        </EntityType>
+        <EntityType Name="ListaNOTIFNotificacoes">
+          <Key>
+            <PropertyRef Name="IdNotificacao" />
+          </Key>
+          <Property Name="IdNotificacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoItem" Type="Int32" Nullable="false" />
+          <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+          <Property Name="NotifAtiva" Type="Boolean" Nullable="false" />
+          <Property Name="NumeroNotificacao" Type="Int32" Nullable="false" />
+          <Property Name="Status" Type="Int32" />
+          <Property Name="Observacao" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+          <Property Name="DataInicioContrato" Type="DateTime" Precision="3" />
+          <Property Name="DataFimContrato" Type="DateTime" Precision="3" />
+          <Property Name="DataNotificacao" Type="DateTime" Precision="3" />
+          <Property Name="AprovacaoGRDV" Type="Boolean" />
+          <Property Name="EnvolvimentoPlanejamento" Type="Boolean" />
+          <Property Name="GrauNotificacao" Type="Int32" />
+          <Property Name="FormaEnvio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="NotificacaoPadrao" Type="Boolean" />
+          <NavigationProperty Name="ListaNOTIF" Relationship="BancoDadosModel.FK_NOTIFICACOES_LISTANOTIF" FromRole="ListaNOTIFNotificacoes" ToRole="ListaNOTIF" />
+        </EntityType>
+        <Association Name="FK_NOTIFICACOES_LISTANOTIF">
+          <End Type="BancoDadosModel.ListaNOTIF" Role="ListaNOTIF" Multiplicity="1" />
+          <End Type="BancoDadosModel.ListaNOTIFNotificacoes" Role="ListaNOTIFNotificacoes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ListaNOTIF">
+              <PropertyRef Name="CodigoItem" />
+            </Principal>
+            <Dependent Role="ListaNOTIFNotificacoes">
+              <PropertyRef Name="CodigoItem" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BancoDadosModelStoreContainer" CdmEntityContainer="BancoDados">
+          <EntitySetMapping Name="ListaNOTIF">
+            <EntityTypeMapping TypeName="BancoDadosModel.ListaNOTIF">
+              <MappingFragment StoreEntitySet="ListaNOTIF">
+                <ScalarProperty Name="RelacoesSetoriais_Data" ColumnName="RelacoesSetoriais_Data" />
+                <ScalarProperty Name="RelacoesSetoriais_Observacao" ColumnName="RelacoesSetoriais_Observacao" />
+                <ScalarProperty Name="RelacoesSetoriais_OrgaoDenuncia" ColumnName="RelacoesSetoriais_OrgaoDenuncia" />
+                <ScalarProperty Name="RelacoesSetoriais_FaseDenuncia" ColumnName="RelacoesSetoriais_FaseDenuncia" />
+                <ScalarProperty Name="Juridico_DataAcao" ColumnName="Juridico_DataAcao" />
+                <ScalarProperty Name="Juridico_Observacao" ColumnName="Juridico_Observacao" />
+                <ScalarProperty Name="Juridico_TipoAcaoJudicial" ColumnName="Juridico_TipoAcaoJudicial" />
+                <ScalarProperty Name="Juridico_FasesJudicializacao" ColumnName="Juridico_FasesJudicializacao" />
+                <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+                <ScalarProperty Name="Consumo" ColumnName="Consumo" />
+                <ScalarProperty Name="StatusLoja" ColumnName="StatusLoja" />
+                <ScalarProperty Name="OutroTipoNotificacao" ColumnName="OutroTipoNotificacao" />
+                <ScalarProperty Name="TipoNotificacao" ColumnName="TipoNotificacao" />
+                <ScalarProperty Name="NumeroContrato" ColumnName="NumeroContrato" />
+                <ScalarProperty Name="NomeContrato" ColumnName="NomeContrato" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="UF" ColumnName="UF" />
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+                <ScalarProperty Name="Mercado" ColumnName="Mercado" />
+                <ScalarProperty Name="Farol" ColumnName="Farol" />
+                <ScalarProperty Name="DataNotificacao" ColumnName="DataNotificacao" />
+                <ScalarProperty Name="NotificacaoPadrao" ColumnName="NotificacaoPadrao" />
+                <ScalarProperty Name="AprovacaoGRDV" ColumnName="AprovacaoGRDV" />
+                <ScalarProperty Name="EnvolvimentoPlanejamento" ColumnName="EnvolvimentoPlanejamento" />
+                <ScalarProperty Name="UtilizaZoneamentoGT" ColumnName="UtilizaZoneamentoGT" />
+                <ScalarProperty Name="UtilizaZoneamentoGR" ColumnName="UtilizaZoneamentoGR" />
+                <ScalarProperty Name="UtilizaZoneamentoGdr" ColumnName="UtilizaZoneamentoGdr" />
+                <ScalarProperty Name="UtilizaZoneamentoDiretor" ColumnName="UtilizaZoneamentoDiretor" />
+                <ScalarProperty Name="UtilizaZoneamentoCdr" ColumnName="UtilizaZoneamentoCdr" />
+                <ScalarProperty Name="UtilizaZoneamentoPadrao" ColumnName="UtilizaZoneamentoPadrao" />
+                <ScalarProperty Name="LoginGDR" ColumnName="LoginGDR" />
+                <ScalarProperty Name="LoginCDR" ColumnName="LoginCDR" />
+                <ScalarProperty Name="LoginDiretorVendas" ColumnName="LoginDiretorVendas" />
+                <ScalarProperty Name="LoginGerenteRegiao" ColumnName="LoginGerenteRegiao" />
+                <ScalarProperty Name="LoginGerenteTerritorio" ColumnName="LoginGerenteTerritorio" />
+                <ScalarProperty Name="DescricaoEtapa" ColumnName="DescricaoEtapa" />
+                <ScalarProperty Name="ContratoPadrao" ColumnName="ContratoPadrao" />
+                <ScalarProperty Name="BuscaDocumentos" ColumnName="BuscaDocumentos" />
+                <ScalarProperty Name="DescricaoEstadoAtualFluxo" ColumnName="DescricaoEstadoAtualFluxo" />
+                <ScalarProperty Name="NumeroSiteCode" ColumnName="NumeroSiteCode" />
+                <ScalarProperty Name="NumeroIBM" ColumnName="NumeroIBM" />
+                <ScalarProperty Name="DescricaoRazaoSocial" ColumnName="DescricaoRazaoSocial" />
+                <ScalarProperty Name="TituloProposta" ColumnName="TituloProposta" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+                <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+                <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+                <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+                <ScalarProperty Name="CodigoLista" ColumnName="CodigoLista" />
+                <ScalarProperty Name="CodigoItem" ColumnName="CodigoItem" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListaNOTIFNotificacoes">
+            <EntityTypeMapping TypeName="BancoDadosModel.ListaNOTIFNotificacoes">
+              <MappingFragment StoreEntitySet="ListaNOTIFNotificacoes">
+                <ScalarProperty Name="NotificacaoPadrao" ColumnName="NotificacaoPadrao" />
+                <ScalarProperty Name="FormaEnvio" ColumnName="FormaEnvio" />
+                <ScalarProperty Name="GrauNotificacao" ColumnName="GrauNotificacao" />
+                <ScalarProperty Name="EnvolvimentoPlanejamento" ColumnName="EnvolvimentoPlanejamento" />
+                <ScalarProperty Name="AprovacaoGRDV" ColumnName="AprovacaoGRDV" />
+                <ScalarProperty Name="DataNotificacao" ColumnName="DataNotificacao" />
+                <ScalarProperty Name="DataFimContrato" ColumnName="DataFimContrato" />
+                <ScalarProperty Name="DataInicioContrato" ColumnName="DataInicioContrato" />
+                <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="NumeroNotificacao" ColumnName="NumeroNotificacao" />
+                <ScalarProperty Name="NotifAtiva" ColumnName="NotifAtiva" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+                <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+                <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+                <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+                <ScalarProperty Name="CodigoItem" ColumnName="CodigoItem" />
+                <ScalarProperty Name="IdNotificacao" ColumnName="IdNotificacao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram DiagramId="109c6d6e3a4b4a65baddbec44bab6bc4" Name="Diagram1" ZoomLevel="50">
+        <EntityTypeShape EntityType="BancoDadosModel.ListaNOTIF" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="BancoDadosModel.ListaNOTIFNotificacoes" Width="1.5" PointX="3" PointY="4.625" />
+        <AssociationConnector Association="BancoDadosModel.FK_NOTIFICACOES_LISTANOTIF" />
+      </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

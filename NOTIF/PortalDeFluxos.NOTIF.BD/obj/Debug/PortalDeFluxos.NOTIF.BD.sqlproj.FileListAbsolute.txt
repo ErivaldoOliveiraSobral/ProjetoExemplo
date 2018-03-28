@@ -1,0 +1,14 @@
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.BD\bin\Debug\PortalDeFluxos.NOTIF.BD.dacpac
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.BD\bin\Debug\PortalDeFluxos.NOTIF.BD.dll
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.BD\bin\Debug\PortalDeFluxos.NOTIF.BD.pdb
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\PortalDeFluxos.NOTIF.BD.dll
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\PortalDeFluxos.NOTIF.BD.pdb
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\bin\Debug\PortalDeFluxos.NOTIF.BD.dacpac
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\bin\Debug\PortalDeFluxos.NOTIF.BD.dll
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\bin\Debug\PortalDeFluxos.NOTIF.BD.pdb
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\Model.xml
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\refactor.xml
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\postdeploy.sql
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\predeploy.sql
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\PortalDeFluxos.NOTIF.BD.dll
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.BD\obj\Debug\PortalDeFluxos.NOTIF.BD.pdb

@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BancoDadosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BancoDados" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ListaNOTIF" EntityType="BancoDadosModel.ListaNOTIF" />
+    <EntitySet Name="ListaNOTIFNotificacoes" EntityType="BancoDadosModel.ListaNOTIFNotificacoes" />
+    <AssociationSet Name="FK_NOTIFICACOES_LISTANOTIF" Association="BancoDadosModel.FK_NOTIFICACOES_LISTANOTIF">
+      <End Role="ListaNOTIF" EntitySet="ListaNOTIF" />
+      <End Role="ListaNOTIFNotificacoes" EntitySet="ListaNOTIFNotificacoes" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="ListaNOTIF">
+    <Key>
+      <PropertyRef Name="CodigoItem" />
+    </Key>
+    <Property Name="CodigoItem" Type="Int32" Nullable="false" />
+    <Property Name="CodigoLista" Type="Guid" Nullable="false" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="TituloProposta" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DescricaoRazaoSocial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroIBM" Type="Int32" />
+    <Property Name="NumeroSiteCode" Type="Int32" />
+    <Property Name="DescricaoEstadoAtualFluxo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="BuscaDocumentos" Type="Boolean" />
+    <Property Name="ContratoPadrao" Type="Boolean" />
+    <Property Name="DescricaoEtapa" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginGerenteTerritorio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginGerenteRegiao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginDiretorVendas" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginCDR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="LoginGDR" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="UtilizaZoneamentoPadrao" Type="Boolean" />
+    <Property Name="UtilizaZoneamentoCdr" Type="Boolean" />
+    <Property Name="UtilizaZoneamentoDiretor" Type="Boolean" />
+    <Property Name="UtilizaZoneamentoGdr" Type="Boolean" />
+    <Property Name="UtilizaZoneamentoGR" Type="Boolean" />
+    <Property Name="UtilizaZoneamentoGT" Type="Boolean" />
+    <Property Name="EnvolvimentoPlanejamento" Type="Boolean" />
+    <Property Name="AprovacaoGRDV" Type="Boolean" />
+    <Property Name="NotificacaoPadrao" Type="Boolean" />
+    <Property Name="DataNotificacao" Type="DateTime" Precision="3" />
+    <Property Name="Farol" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Mercado" Type="Int32" />
+    <Property Name="CNPJ" Type="String" MaxLength="18" FixedLength="true" Unicode="false" />
+    <Property Name="Endereco" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Bairro" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cep" Type="String" MaxLength="9" FixedLength="false" Unicode="false" />
+    <Property Name="UF" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Cidade" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NomeContrato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NumeroContrato" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="TipoNotificacao" Type="Int32" />
+    <Property Name="OutroTipoNotificacao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="StatusLoja" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Consumo" Type="Decimal" Precision="15" Scale="3" />
+    <Property Name="Comentario" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Juridico_FasesJudicializacao" Type="Int32" />
+    <Property Name="Juridico_TipoAcaoJudicial" Type="Int32" />
+    <Property Name="Juridico_Observacao" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="Juridico_DataAcao" Type="DateTime" Precision="3" />
+    <Property Name="RelacoesSetoriais_FaseDenuncia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RelacoesSetoriais_OrgaoDenuncia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="RelacoesSetoriais_Observacao" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="RelacoesSetoriais_Data" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="ListaNOTIFNotificacoes" Relationship="BancoDadosModel.FK_NOTIFICACOES_LISTANOTIF" FromRole="ListaNOTIF" ToRole="ListaNOTIFNotificacoes" />
+  </EntityType>
+  <EntityType Name="ListaNOTIFNotificacoes">
+    <Key>
+      <PropertyRef Name="IdNotificacao" />
+    </Key>
+    <Property Name="IdNotificacao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CodigoItem" Type="Int32" Nullable="false" />
+    <Property Name="LoginInclusao" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataInclusao" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LoginAlteracao" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="DataAlteracao" Type="DateTime" Precision="3" />
+    <Property Name="Ativo" Type="Boolean" Nullable="false" />
+    <Property Name="NotifAtiva" Type="Boolean" Nullable="false" />
+    <Property Name="NumeroNotificacao" Type="Int32" Nullable="false" />
+    <Property Name="Status" Type="Int32" />
+    <Property Name="Observacao" Type="String" MaxLength="5000" FixedLength="false" Unicode="false" />
+    <Property Name="DataInicioContrato" Type="DateTime" Precision="3" />
+    <Property Name="DataFimContrato" Type="DateTime" Precision="3" />
+    <Property Name="DataNotificacao" Type="DateTime" Precision="3" />
+    <Property Name="AprovacaoGRDV" Type="Boolean" />
+    <Property Name="EnvolvimentoPlanejamento" Type="Boolean" />
+    <Property Name="GrauNotificacao" Type="Int32" />
+    <Property Name="FormaEnvio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="NotificacaoPadrao" Type="Boolean" />
+    <NavigationProperty Name="ListaNOTIF" Relationship="BancoDadosModel.FK_NOTIFICACOES_LISTANOTIF" FromRole="ListaNOTIFNotificacoes" ToRole="ListaNOTIF" />
+  </EntityType>
+  <Association Name="FK_NOTIFICACOES_LISTANOTIF">
+    <End Type="BancoDadosModel.ListaNOTIF" Role="ListaNOTIF" Multiplicity="1" />
+    <End Type="BancoDadosModel.ListaNOTIFNotificacoes" Role="ListaNOTIFNotificacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ListaNOTIF">
+        <PropertyRef Name="CodigoItem" />
+      </Principal>
+      <Dependent Role="ListaNOTIFNotificacoes">
+        <PropertyRef Name="CodigoItem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

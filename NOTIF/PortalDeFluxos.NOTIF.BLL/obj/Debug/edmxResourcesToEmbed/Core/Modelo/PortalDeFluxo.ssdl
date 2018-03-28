@@ -1,0 +1,815 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PortalDeFluxoModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AnoContratual">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdProposta" Type="int" Nullable="false" />
+    <Property Name="IdTipoProposta" Type="int" Nullable="false" />
+    <Property Name="CasoBase" Type="bit" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="Ano" Type="int" Nullable="false" />
+    <Property Name="Bonificacao" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="BonificacaoPorAno" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoVolumePadrao" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoVolumeExcecao" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="OutrasReceitas" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="OutrasDespesas" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoVolumes" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="OutrosFluxosPositivos" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="OutrosFluxosNegativos" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Diesel" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Otto" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="OleoCombustivel" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Arla" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoFuels" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="AluguelPago" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="AluguelRecebido" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Manutencao" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="MeioAmbiente" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Terrenos" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="EdificacoesPista" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="EdificacoesLoja" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Bombas" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Tanques" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="ImagemRVI" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="EquipamentosLoja" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="CurvaMaturacaoLoja" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Gasolina" Type="decimal" Precision="18" Scale="5" />
+    <Property Name="Etanol" Type="decimal" Precision="18" Scale="5" />
+  </EntityType>
+  <EntityType Name="Cidade">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdEstado" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="SiglaEstado" Type="nvarchar" MaxLength="2" />
+    <Property Name="SiglaPais" Type="nvarchar" MaxLength="2" />
+    <Property Name="CodigoSistemaRBC" Type="int" />
+  </EntityType>
+  <EntityType Name="Delegacao">
+    <Key>
+      <PropertyRef Name="IdDelegacao" />
+    </Key>
+    <Property Name="IdDelegacao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoginDe" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NomeDe" Type="varchar" MaxLength="255" />
+    <Property Name="EmailDe" Type="varchar" MaxLength="200" />
+    <Property Name="LoginPara" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="NomePara" Type="varchar" MaxLength="255" />
+    <Property Name="EmailPara" Type="varchar" MaxLength="200" />
+    <Property Name="DataInicio" Type="datetime" Nullable="false" />
+    <Property Name="DataFim" Type="datetime" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="CodigoDelegacao2007" Type="int" />
+  </EntityType>
+  <EntityType Name="Documento">
+    <Key>
+      <PropertyRef Name="IdDocumento" />
+    </Key>
+    <Property Name="IdDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Agrupador" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EmailAttachment">
+    <Key>
+      <PropertyRef Name="IdEmailAttachment" />
+    </Key>
+    <Property Name="IdEmailAttachment" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoEmail" Type="tinyint" Nullable="false" />
+    <Property Name="Processado" Type="bit" Nullable="false" />
+    <Property Name="CodigoLista" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="IdItem" Type="int" Nullable="false" />
+    <Property Name="NomeProposta" Type="varchar" MaxLength="200" />
+    <Property Name="Ibm" Type="varchar" MaxLength="200" />
+    <Property Name="RazaoSocial" Type="varchar" MaxLength="200" />
+    <Property Name="GerenteTerritorio" Type="varchar" MaxLength="200" />
+    <Property Name="GerenteRegiao" Type="varchar" MaxLength="200" />
+    <Property Name="DiretorVendas" Type="varchar" MaxLength="200" />
+    <Property Name="Cdr" Type="varchar" MaxLength="200" />
+    <Property Name="Gdr" Type="varchar" MaxLength="200" />
+    <Property Name="Ambiente2013" Type="bit" Nullable="false" />
+    <Property Name="DescricaoAssuntoEmail" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoMensagemEmail" Type="varchar(max)" />
+    <Property Name="EmailUsuario" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Estado">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="UF" Type="nvarchar" MaxLength="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstruturaComercial">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IBM" Type="char" MaxLength="10" />
+    <Property Name="SiteCode" Type="char" MaxLength="10" />
+    <Property Name="GT" Type="varchar" MaxLength="100" />
+    <Property Name="GR" Type="varchar" MaxLength="100" />
+    <Property Name="DV" Type="varchar" MaxLength="100" />
+    <Property Name="CDR" Type="varchar" MaxLength="100" />
+    <Property Name="GDR" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="EstruturaComercial_Modificada">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IBM" Type="char" MaxLength="10" />
+    <Property Name="SiteCode" Type="char" MaxLength="10" />
+    <Property Name="GT" Type="varchar" MaxLength="100" />
+    <Property Name="GR" Type="varchar" MaxLength="100" />
+    <Property Name="DV" Type="varchar" MaxLength="100" />
+    <Property Name="CDR" Type="varchar" MaxLength="100" />
+    <Property Name="GDR" Type="varchar" MaxLength="100" />
+    <Property Name="Processado" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="EstruturaComercial_Salesforce">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IBM" Type="char" MaxLength="10" />
+    <Property Name="SiteCode" Type="char" MaxLength="10" />
+    <Property Name="GT" Type="varchar" MaxLength="100" />
+    <Property Name="GR" Type="varchar" MaxLength="100" />
+    <Property Name="DV" Type="varchar" MaxLength="100" />
+    <Property Name="CDR" Type="varchar" MaxLength="100" />
+    <Property Name="GDR" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="GrupoSP">
+    <Key>
+      <PropertyRef Name="IdGrupoSP" />
+    </Key>
+    <Property Name="IdGrupoSP" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GrupoUsuariosSP">
+    <Key>
+      <PropertyRef Name="IdGrupoUsuariosSP" />
+    </Key>
+    <Property Name="IdGrupoUsuariosSP" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdUsuarioSP" Type="int" Nullable="false" />
+    <Property Name="IdGrupoSP" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HorarioVerao">
+    <Key>
+      <PropertyRef Name="IdHorarioVerao" />
+    </Key>
+    <Property Name="IdHorarioVerao" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataInicio" Type="datetime" Nullable="false" />
+    <Property Name="DataFim" Type="datetime" Nullable="false" />
+    <Property Name="Ano" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InstanciaFluxo">
+    <Key>
+      <PropertyRef Name="IdInstanciaFluxo" />
+    </Key>
+    <Property Name="IdInstanciaFluxo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoInstanciaFluxo" Type="uniqueidentifier" />
+    <Property Name="CodigoFluxo" Type="uniqueidentifier" />
+    <Property Name="CodigoLista" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CodigoItem" Type="int" Nullable="false" />
+    <Property Name="StatusFluxo" Type="int" />
+    <Property Name="NomeFluxo" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="NomeEtapa" Type="varchar" MaxLength="200" />
+    <Property Name="NomeSolicitacao" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="NomeSolicitante" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="LoginSolicitante" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="DataInicio" Type="datetime" Nullable="false" />
+    <Property Name="DataFinalizado" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="CodigoInstanceID" Type="int" />
+    <Property Name="CodigoWorkflowProgressID" Type="int" />
+    <Property Name="NumeroTentativaInicio" Type="int" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="ErroCancelado" Type="bit" />
+    <Property Name="FluxoReprovado" Type="bit" />
+    <Property Name="EtapaParalela" Type="bit" />
+    <Property Name="LoginGerenteTerritorio" Type="varchar" MaxLength="255" />
+    <Property Name="NomeGerenteTerritorio" Type="varchar" MaxLength="255" />
+    <Property Name="LoginDiretorVendas" Type="varchar" MaxLength="255" />
+    <Property Name="NomeDiretorVendas" Type="varchar" MaxLength="255" />
+    <Property Name="LoginGdr" Type="varchar" MaxLength="255" />
+    <Property Name="NomeGdr" Type="varchar" MaxLength="255" />
+    <Property Name="LoginGerenteRegiao" Type="varchar" MaxLength="255" />
+    <Property Name="NomeGerenteRegiao" Type="varchar" MaxLength="255" />
+    <Property Name="LoginCdr" Type="varchar" MaxLength="255" />
+    <Property Name="NomeCdr" Type="varchar" MaxLength="255" />
+    <Property Name="EmailGerenteTerritorio" Type="varchar" MaxLength="255" />
+    <Property Name="EmailDiretorVendas" Type="varchar" MaxLength="255" />
+    <Property Name="EmailGdr" Type="varchar" MaxLength="255" />
+    <Property Name="EmailGerenteRegiao" Type="varchar" MaxLength="255" />
+    <Property Name="EmailCdr" Type="varchar" MaxLength="255" />
+    <Property Name="DataRestartWorkflow" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Lembrete">
+    <Key>
+      <PropertyRef Name="IdLembrete" />
+    </Key>
+    <Property Name="IdLembrete" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTarefa" Type="int" Nullable="false" />
+    <Property Name="EmailPara" Type="varchar" MaxLength="2000" />
+    <Property Name="LoginPara" Type="varchar" MaxLength="150" Nullable="false" />
+    <Property Name="NomePara" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DataEnvio" Type="datetime" Nullable="false" />
+    <Property Name="CopiarSuperior" Type="bit" Nullable="false" />
+    <Property Name="EmailEnviado" Type="bit" Nullable="false" />
+    <Property Name="DescricaoAssunto" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="DescricaoMensagem" Type="varchar(max)" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lista">
+    <Key>
+      <PropertyRef Name="CodigoLista" />
+    </Key>
+    <Property Name="CodigoLista" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="DescricaoUrlLista" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoUrlItem" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoUrlTarefa" Type="varchar" MaxLength="500" />
+    <Property Name="Ambiente2007" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListaHist">
+    <Key>
+      <PropertyRef Name="IdListaHist" />
+    </Key>
+    <Property Name="IdListaHist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CodigoLista" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CodigoItem" Type="int" Nullable="false" />
+    <Property Name="XmlAlteracao" Type="xml" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Log">
+    <Key>
+      <PropertyRef Name="IdLog" />
+    </Key>
+    <Property Name="IdLog" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeProcesso" Type="varchar" MaxLength="200" />
+    <Property Name="DescricaoOrigem" Type="varchar" MaxLength="200" />
+    <Property Name="DescricaoMensagem" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="DescricaoDetalhe" Type="varchar(max)" />
+    <Property Name="Erro" Type="bit" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LogIntegracao">
+    <Key>
+      <PropertyRef Name="IdLogIntegracao" />
+    </Key>
+    <Property Name="IdLogIntegracao" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DataExecucao" Type="datetime" Nullable="false" />
+    <Property Name="WorkflowProgressID" Type="int" Nullable="false" />
+    <Property Name="QuantidadeLista" Type="int" Nullable="false" />
+    <Property Name="QuantidadeInstancia" Type="int" Nullable="false" />
+    <Property Name="QuantidadeTarefa" Type="int" Nullable="false" />
+    <Property Name="QuantidadeDelegacao" Type="int" Nullable="false" />
+    <Property Name="TempoExecucao" Type="int" Nullable="false" />
+    <Property Name="ExecucaoCompleta" Type="bit" />
+    <Property Name="ExecucaoGestaoFluxo" Type="bit" />
+    <Property Name="QuantidadeGestaoFluxoFluxo" Type="int" />
+    <Property Name="QuantidadeGestaoFluxoTarefa" Type="int" />
+    <Property Name="QuantidadeGestaoFluxoTarefaStatus" Type="int" />
+  </EntityType>
+  <EntityType Name="Parametro">
+    <Key>
+      <PropertyRef Name="IdParametro" />
+    </Key>
+    <Property Name="IdParametro" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Valor" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PropostaDocumento">
+    <Key>
+      <PropertyRef Name="IdPropostaDocumento" />
+    </Key>
+    <Property Name="IdPropostaDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoProposta" Type="int" Nullable="false" />
+    <Property Name="IdDocumento" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'FluxosRaizen.dbo.RelatorioOperacionalTarefa' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="RelatorioOperacionalTarefa">
+    <Key>
+      <PropertyRef Name="Fluxo" />
+      <PropertyRef Name="Tabela" />
+    </Key>
+    <Property Name="Fluxo" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Tabela" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="CodigoLista" Type="varchar" MaxLength="255" />
+    <Property Name="IdTipoProposta" Type="varchar" MaxLength="255" />
+    <Property Name="IdProposta" Type="varchar" MaxLength="255" />
+    <Property Name="TituloProposta" Type="varchar" MaxLength="255" />
+    <Property Name="Combo" Type="varchar" MaxLength="255" />
+    <Property Name="RazaoSocial" Type="varchar" MaxLength="255" />
+    <Property Name="IBM" Type="varchar" MaxLength="255" />
+    <Property Name="SiteCode" Type="varchar" MaxLength="255" />
+    <Property Name="GT" Type="varchar" MaxLength="255" />
+    <Property Name="GR" Type="varchar" MaxLength="255" />
+    <Property Name="Diretor" Type="varchar" MaxLength="255" />
+    <Property Name="CDR" Type="varchar" MaxLength="255" />
+    <Property Name="GDR" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SAEParametros">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sistema" Type="nvarchar" MaxLength="20" />
+    <Property Name="Direcao" Type="int" />
+    <Property Name="Celula" Type="nvarchar" MaxLength="20" />
+    <Property Name="Planilha" Type="nvarchar" MaxLength="20" />
+    <Property Name="CampoSistema" Type="nvarchar" MaxLength="100" />
+    <Property Name="TipoInformacao" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="ServicoAgendado">
+    <Key>
+      <PropertyRef Name="IdServicoAgendado" />
+    </Key>
+    <Property Name="IdServicoAgendado" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NomeAssemblyFullName" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="NomeAssemblyType" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DescricaoAgenda" Type="varchar" MaxLength="500" />
+    <Property Name="DataUltimaExecucao" Type="datetime" />
+    <Property Name="DataProximaExecucao" Type="datetime" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="Logar" Type="bit" />
+  </EntityType>
+  <EntityType Name="TabelaExemplo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Valor" Type="varchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tarefa">
+    <Key>
+      <PropertyRef Name="IdTarefa" />
+    </Key>
+    <Property Name="IdTarefa" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdInstanciaFluxo" Type="int" Nullable="false" />
+    <Property Name="CodigoTarefa" Type="uniqueidentifier" />
+    <Property Name="CodigoConfiguracao" Type="int" />
+    <Property Name="AprovacaoPor" Type="int" />
+    <Property Name="NomeTarefa" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="NomeEtapa" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="TipoTarefa" Type="tinyint" />
+    <Property Name="DescricaoAreaResponsavel" Type="varchar" MaxLength="200" />
+    <Property Name="EmailResponsavel" Type="varchar" MaxLength="2000" Nullable="false" />
+    <Property Name="LoginResponsavel" Type="varchar" MaxLength="250" Nullable="false" />
+    <Property Name="NomeResponsavel" Type="varchar" MaxLength="500" Nullable="false" />
+    <Property Name="EmailSuperior" Type="varchar" MaxLength="200" />
+    <Property Name="LoginSuperior" Type="varchar" MaxLength="250" />
+    <Property Name="NomeSuperior" Type="varchar" MaxLength="500" />
+    <Property Name="SLA" Type="int" />
+    <Property Name="DataSLA" Type="datetime" />
+    <Property Name="DataEscalonamento" Type="datetime" />
+    <Property Name="ComentarioAprovacao" Type="varchar(max)" />
+    <Property Name="DescricaoAcaoEfetuada" Type="varchar" MaxLength="100" />
+    <Property Name="DescricaoAcao" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoAssuntoEmail" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoMensagemEmail" Type="varchar(max)" />
+    <Property Name="DescricaoAssuntoEmailEscalonamento" Type="varchar" MaxLength="500" />
+    <Property Name="DescricaoMensagemEmailEscalonamento" Type="varchar(max)" />
+    <Property Name="CopiarSuperior" Type="bit" Nullable="false" />
+    <Property Name="EmailEnviado" Type="bit" Nullable="false" />
+    <Property Name="TarefaCompleta" Type="bit" Nullable="false" />
+    <Property Name="TarefaEscalonada" Type="bit" Nullable="false" />
+    <Property Name="NomeCompletadoPor" Type="varchar" MaxLength="100" />
+    <Property Name="LoginCompletadoPor" Type="varchar" MaxLength="100" />
+    <Property Name="DataFinalizado" Type="datetime" />
+    <Property Name="DataAtribuido" Type="datetime" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="CodigoTarefaSP" Type="int" />
+    <Property Name="CodigoListaTarefa" Type="uniqueidentifier" />
+    <Property Name="CodigoHumanWorkflowID" Type="int" />
+    <Property Name="DescricaoAcaoFinalizarEtapa" Type="varchar" MaxLength="500" />
+    <Property Name="AprovadoPorEmail" Type="bit" />
+    <Property Name="IndexAprovacao" Type="int" />
+    <Property Name="AprovacoesAtuais" Type="bit" />
+    <Property Name="IdTarefaPai" Type="int" />
+    <Property Name="EnviarPdf" Type="bit" />
+    <Property Name="IndexHeadLineFinal" Type="int" />
+    <Property Name="ParametrosUrl" Type="varchar" MaxLength="500" />
+    <Property Name="AprovacaoAutomatica" Type="bit" />
+    <Property Name="DescricaoRespostaAutomatica" Type="varchar" MaxLength="100" />
+    <Property Name="AprovadoAutomaticamente" Type="bit" />
+    <Property Name="ComentarioAprovacaoAutomatica" Type="varchar" MaxLength="5000" />
+  </EntityType>
+  <EntityType Name="TarefaHist">
+    <Key>
+      <PropertyRef Name="IdTarefaHist" />
+    </Key>
+    <Property Name="IdTarefaHist" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTarefa" Type="int" Nullable="false" />
+    <Property Name="TipoTarefaHist" Type="tinyint" Nullable="false" />
+    <Property Name="LoginDe" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LoginPara" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="LoginInclusao" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="DataInclusao" Type="datetime" Nullable="false" />
+    <Property Name="LoginAlteracao" Type="varchar" MaxLength="255" />
+    <Property Name="DataAlteracao" Type="datetime" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="ComentarioDelegacao" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="TipoProposta">
+    <Key>
+      <PropertyRef Name="IdTipoProposta" />
+    </Key>
+    <Property Name="IdTipoProposta" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdTipoPropostaPai" Type="int" />
+    <Property Name="Proposta" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TipoPropostaDocumento">
+    <Key>
+      <PropertyRef Name="IdTipoPropostaDocumento" />
+    </Key>
+    <Property Name="IdTipoPropostaDocumento" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IdItem" Type="int" Nullable="false" />
+    <Property Name="IdTipoProposta" Type="int" />
+    <Property Name="IdDocumento" Type="int" />
+    <Property Name="Tem" Type="bit" />
+    <Property Name="Atende" Type="bit" />
+    <Property Name="Excecao" Type="bit" />
+    <Property Name="Dispensado" Type="bit" />
+  </EntityType>
+  <EntityType Name="UsuarioSP">
+    <Key>
+      <PropertyRef Name="IdUsuarioSP" />
+    </Key>
+    <Property Name="IdUsuarioSP" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="LoginComClaims" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Login" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="LookupValue" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="250" />
+    <Property Name="SiteAdmin" Type="bit" Nullable="false" />
+    <Property Name="ContaSistema" Type="bit" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="WFGestaoFluxo_Fluxo">
+    <Key>
+      <PropertyRef Name="CD_SEQ_FLUXO" />
+    </Key>
+    <Property Name="CD_SEQ_FLUXO" Type="int" Nullable="false" />
+    <Property Name="CD_ITEM" Type="int" Nullable="false" />
+    <Property Name="CD_LISTA" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NM_LISTA" Type="varchar" MaxLength="255" />
+    <Property Name="NM_SOLICITACAO" Type="varchar" MaxLength="255" />
+    <Property Name="NM_IBM" Type="varchar" MaxLength="20" />
+    <Property Name="NM_RAZAO_SOCIAL" Type="varchar" MaxLength="255" />
+    <Property Name="NM_SOLICITANTE" Type="varchar" MaxLength="255" />
+    <Property Name="NM_STATUS" Type="varchar" MaxLength="255" />
+    <Property Name="NM_ATIVO" Type="varchar" MaxLength="50" />
+    <Property Name="NM_GA" Type="varchar" MaxLength="255" />
+    <Property Name="NM_GT" Type="varchar" MaxLength="255" />
+    <Property Name="DT_ENTRADA" Type="datetime" />
+    <Property Name="DT_SAIDA" Type="datetime" />
+    <Property Name="DT_CRIACAO" Type="datetime" />
+    <Property Name="DT_MODIFICACAO" Type="datetime" />
+  </EntityType>
+  <EntityType Name="WFGestaoFluxo_Tarefa">
+    <Key>
+      <PropertyRef Name="CD_TAREFA" />
+    </Key>
+    <Property Name="CD_TAREFA" Type="int" Nullable="false" />
+    <Property Name="CD_FLUXO" Type="int" Nullable="false" />
+    <Property Name="CD_WORKFLOW_ID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="CD_LISTA_TAREFA" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="NR_ESTADO_ID" Type="int" Nullable="false" />
+    <Property Name="NR_ACAO_ID" Type="int" Nullable="false" />
+    <Property Name="NR_ESTADO_ACAO_ID" Type="int" Nullable="false" />
+    <Property Name="SN_FLUXO_ATUAL" Type="bit" Nullable="false" />
+    <Property Name="NM_TAREFA" Type="varchar" MaxLength="255" />
+    <Property Name="NM_PAPEL" Type="varchar" MaxLength="255" />
+    <Property Name="NM_RESPONSAVEL" Type="varchar" MaxLength="255" />
+    <Property Name="NM_RESPONSAVEL_ORIGINAL" Type="varchar" MaxLength="255" />
+    <Property Name="NM_RESPONSAVEL_LOGIN" Type="varchar" MaxLength="255" />
+    <Property Name="NM_RESPONSAVEL_LOGIN_ORIGINAL" Type="varchar" MaxLength="255" />
+    <Property Name="NM_SUPERVISORES" Type="varchar" MaxLength="1000" />
+    <Property Name="NM_SUPERVISORES_LOGIN" Type="varchar" MaxLength="1000" />
+    <Property Name="NM_STATUS" Type="varchar" MaxLength="255" />
+    <Property Name="NM_COMENTARIOS" Type="varchar" MaxLength="4000" />
+    <Property Name="SN_DELEGADO_SUPERVISOR" Type="bit" />
+    <Property Name="NR_EMAIL_SUPERVISOR" Type="int" />
+    <Property Name="NR_EMAIL_RESPONSAVEL" Type="int" />
+    <Property Name="NR_SLA_ESPERADO" Type="int" />
+    <Property Name="NR_SLA_REAL" Type="int" />
+    <Property Name="DT_SLA" Type="datetime" />
+    <Property Name="DT_SAIDA" Type="datetime" />
+    <Property Name="DT_CRIACAO" Type="datetime" />
+    <Property Name="DT_MODIFICACAO" Type="datetime" />
+    <Property Name="DT_DELEGACAO_PROGRAMADA" Type="datetime" />
+    <Property Name="CD_ITEM_TAREFA" Type="int" />
+  </EntityType>
+  <Association Name="FK_AnoContratual_TipoProposta">
+    <End Role="TipoProposta" Type="Self.TipoProposta" Multiplicity="1" />
+    <End Role="AnoContratual" Type="Self.AnoContratual" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProposta">
+        <PropertyRef Name="IdTipoProposta" />
+      </Principal>
+      <Dependent Role="AnoContratual">
+        <PropertyRef Name="IdTipoProposta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cidade_Estado">
+    <End Role="Estado" Type="Self.Estado" Multiplicity="1" />
+    <End Role="Cidade" Type="Self.Cidade" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Estado">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Cidade">
+        <PropertyRef Name="IdEstado" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrupoUsuariosSP_GrupoSP">
+    <End Role="GrupoSP" Type="Self.GrupoSP" Multiplicity="1" />
+    <End Role="GrupoUsuariosSP" Type="Self.GrupoUsuariosSP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoSP">
+        <PropertyRef Name="IdGrupoSP" />
+      </Principal>
+      <Dependent Role="GrupoUsuariosSP">
+        <PropertyRef Name="IdGrupoSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GrupoUsuariosSP_UsuariosSP">
+    <End Role="UsuarioSP" Type="Self.UsuarioSP" Multiplicity="1" />
+    <End Role="GrupoUsuariosSP" Type="Self.GrupoUsuariosSP" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UsuarioSP">
+        <PropertyRef Name="IdUsuarioSP" />
+      </Principal>
+      <Dependent Role="GrupoUsuariosSP">
+        <PropertyRef Name="IdUsuarioSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InstanciaFluxo_Lista">
+    <End Role="Lista" Type="Self.Lista" Multiplicity="1" />
+    <End Role="InstanciaFluxo" Type="Self.InstanciaFluxo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lista">
+        <PropertyRef Name="CodigoLista" />
+      </Principal>
+      <Dependent Role="InstanciaFluxo">
+        <PropertyRef Name="CodigoLista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Lembrete_Tarefa">
+    <End Role="Tarefa" Type="Self.Tarefa" Multiplicity="1" />
+    <End Role="Lembrete" Type="Self.Lembrete" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarefa">
+        <PropertyRef Name="IdTarefa" />
+      </Principal>
+      <Dependent Role="Lembrete">
+        <PropertyRef Name="IdTarefa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ListaHist_Lista">
+    <End Role="Lista" Type="Self.Lista" Multiplicity="1" />
+    <End Role="ListaHist" Type="Self.ListaHist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Lista">
+        <PropertyRef Name="CodigoLista" />
+      </Principal>
+      <Dependent Role="ListaHist">
+        <PropertyRef Name="CodigoLista" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropostaDocumento_TipoProposta">
+    <End Role="TipoProposta" Type="Self.TipoProposta" Multiplicity="1" />
+    <End Role="PropostaDocumento" Type="Self.PropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProposta">
+        <PropertyRef Name="IdTipoProposta" />
+      </Principal>
+      <Dependent Role="PropostaDocumento">
+        <PropertyRef Name="IdTipoProposta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PropostasDocumento_Documento">
+    <End Role="Documento" Type="Self.Documento" Multiplicity="1" />
+    <End Role="PropostaDocumento" Type="Self.PropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="IdDocumento" />
+      </Principal>
+      <Dependent Role="PropostaDocumento">
+        <PropertyRef Name="IdDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarefa_Discussao">
+    <End Role="Tarefa" Type="Self.Tarefa" Multiplicity="0..1" />
+    <End Role="Tarefa1" Type="Self.Tarefa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarefa">
+        <PropertyRef Name="IdTarefa" />
+      </Principal>
+      <Dependent Role="Tarefa1">
+        <PropertyRef Name="IdTarefaPai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Tarefa_InstanciaFluxo">
+    <End Role="InstanciaFluxo" Type="Self.InstanciaFluxo" Multiplicity="1" />
+    <End Role="Tarefa" Type="Self.Tarefa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InstanciaFluxo">
+        <PropertyRef Name="IdInstanciaFluxo" />
+      </Principal>
+      <Dependent Role="Tarefa">
+        <PropertyRef Name="IdInstanciaFluxo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TarefaHist_Tarefa">
+    <End Role="Tarefa" Type="Self.Tarefa" Multiplicity="1" />
+    <End Role="TarefaHist" Type="Self.TarefaHist" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tarefa">
+        <PropertyRef Name="IdTarefa" />
+      </Principal>
+      <Dependent Role="TarefaHist">
+        <PropertyRef Name="IdTarefa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoPropostaDocumento_Documento">
+    <End Role="Documento" Type="Self.Documento" Multiplicity="0..1" />
+    <End Role="TipoPropostaDocumento" Type="Self.TipoPropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Documento">
+        <PropertyRef Name="IdDocumento" />
+      </Principal>
+      <Dependent Role="TipoPropostaDocumento">
+        <PropertyRef Name="IdDocumento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TipoPropostaDocumento_TipoProposta">
+    <End Role="TipoProposta" Type="Self.TipoProposta" Multiplicity="0..1" />
+    <End Role="TipoPropostaDocumento" Type="Self.TipoPropostaDocumento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoProposta">
+        <PropertyRef Name="IdTipoProposta" />
+      </Principal>
+      <Dependent Role="TipoPropostaDocumento">
+        <PropertyRef Name="IdTipoProposta" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PortalDeFluxoModelStoreContainer">
+    <EntitySet Name="AnoContratual" EntityType="Self.AnoContratual" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cidade" EntityType="Self.Cidade" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Delegacao" EntityType="Self.Delegacao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Documento" EntityType="Self.Documento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EmailAttachment" EntityType="Self.EmailAttachment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estado" EntityType="Self.Estado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstruturaComercial" EntityType="Self.EstruturaComercial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstruturaComercial_Modificada" EntityType="Self.EstruturaComercial_Modificada" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EstruturaComercial_Salesforce" EntityType="Self.EstruturaComercial_Salesforce" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupoSP" EntityType="Self.GrupoSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="GrupoUsuariosSP" EntityType="Self.GrupoUsuariosSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HorarioVerao" EntityType="Self.HorarioVerao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InstanciaFluxo" EntityType="Self.InstanciaFluxo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lembrete" EntityType="Self.Lembrete" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lista" EntityType="Self.Lista" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ListaHist" EntityType="Self.ListaHist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Log" EntityType="Self.Log" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogIntegracao" EntityType="Self.LogIntegracao" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Parametro" EntityType="Self.Parametro" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PropostaDocumento" EntityType="Self.PropostaDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SAEParametros" EntityType="Self.SAEParametros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ServicoAgendado" EntityType="Self.ServicoAgendado" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TabelaExemplo" EntityType="Self.TabelaExemplo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tarefa" EntityType="Self.Tarefa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TarefaHist" EntityType="Self.TarefaHist" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoProposta" EntityType="Self.TipoProposta" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoPropostaDocumento" EntityType="Self.TipoPropostaDocumento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UsuarioSP" EntityType="Self.UsuarioSP" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WFGestaoFluxo_Fluxo" EntityType="Self.WFGestaoFluxo_Fluxo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WFGestaoFluxo_Tarefa" EntityType="Self.WFGestaoFluxo_Tarefa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RelatorioOperacionalTarefa" EntityType="Self.RelatorioOperacionalTarefa" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [RelatorioOperacionalTarefa].[Fluxo] AS [Fluxo], 
+    [RelatorioOperacionalTarefa].[Tabela] AS [Tabela], 
+    [RelatorioOperacionalTarefa].[CodigoLista] AS [CodigoLista], 
+    [RelatorioOperacionalTarefa].[IdTipoProposta] AS [IdTipoProposta], 
+    [RelatorioOperacionalTarefa].[IdProposta] AS [IdProposta], 
+    [RelatorioOperacionalTarefa].[TituloProposta] AS [TituloProposta], 
+    [RelatorioOperacionalTarefa].[Combo] AS [Combo], 
+    [RelatorioOperacionalTarefa].[RazaoSocial] AS [RazaoSocial], 
+    [RelatorioOperacionalTarefa].[IBM] AS [IBM], 
+    [RelatorioOperacionalTarefa].[SiteCode] AS [SiteCode], 
+    [RelatorioOperacionalTarefa].[GT] AS [GT], 
+    [RelatorioOperacionalTarefa].[GR] AS [GR], 
+    [RelatorioOperacionalTarefa].[Diretor] AS [Diretor], 
+    [RelatorioOperacionalTarefa].[CDR] AS [CDR], 
+    [RelatorioOperacionalTarefa].[GDR] AS [GDR]
+    FROM [dbo].[RelatorioOperacionalTarefa] AS [RelatorioOperacionalTarefa]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_AnoContratual_TipoProposta" Association="Self.FK_AnoContratual_TipoProposta">
+      <End Role="TipoProposta" EntitySet="TipoProposta" />
+      <End Role="AnoContratual" EntitySet="AnoContratual" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cidade_Estado" Association="Self.FK_Cidade_Estado">
+      <End Role="Estado" EntitySet="Estado" />
+      <End Role="Cidade" EntitySet="Cidade" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrupoUsuariosSP_GrupoSP" Association="Self.FK_GrupoUsuariosSP_GrupoSP">
+      <End Role="GrupoSP" EntitySet="GrupoSP" />
+      <End Role="GrupoUsuariosSP" EntitySet="GrupoUsuariosSP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GrupoUsuariosSP_UsuariosSP" Association="Self.FK_GrupoUsuariosSP_UsuariosSP">
+      <End Role="UsuarioSP" EntitySet="UsuarioSP" />
+      <End Role="GrupoUsuariosSP" EntitySet="GrupoUsuariosSP" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InstanciaFluxo_Lista" Association="Self.FK_InstanciaFluxo_Lista">
+      <End Role="Lista" EntitySet="Lista" />
+      <End Role="InstanciaFluxo" EntitySet="InstanciaFluxo" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Lembrete_Tarefa" Association="Self.FK_Lembrete_Tarefa">
+      <End Role="Tarefa" EntitySet="Tarefa" />
+      <End Role="Lembrete" EntitySet="Lembrete" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ListaHist_Lista" Association="Self.FK_ListaHist_Lista">
+      <End Role="Lista" EntitySet="Lista" />
+      <End Role="ListaHist" EntitySet="ListaHist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropostaDocumento_TipoProposta" Association="Self.FK_PropostaDocumento_TipoProposta">
+      <End Role="TipoProposta" EntitySet="TipoProposta" />
+      <End Role="PropostaDocumento" EntitySet="PropostaDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PropostasDocumento_Documento" Association="Self.FK_PropostasDocumento_Documento">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="PropostaDocumento" EntitySet="PropostaDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarefa_Discussao" Association="Self.FK_Tarefa_Discussao">
+      <End Role="Tarefa" EntitySet="Tarefa" />
+      <End Role="Tarefa1" EntitySet="Tarefa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Tarefa_InstanciaFluxo" Association="Self.FK_Tarefa_InstanciaFluxo">
+      <End Role="InstanciaFluxo" EntitySet="InstanciaFluxo" />
+      <End Role="Tarefa" EntitySet="Tarefa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TarefaHist_Tarefa" Association="Self.FK_TarefaHist_Tarefa">
+      <End Role="Tarefa" EntitySet="Tarefa" />
+      <End Role="TarefaHist" EntitySet="TarefaHist" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoPropostaDocumento_Documento" Association="Self.FK_TipoPropostaDocumento_Documento">
+      <End Role="Documento" EntitySet="Documento" />
+      <End Role="TipoPropostaDocumento" EntitySet="TipoPropostaDocumento" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TipoPropostaDocumento_TipoProposta" Association="Self.FK_TipoPropostaDocumento_TipoProposta">
+      <End Role="TipoProposta" EntitySet="TipoProposta" />
+      <End Role="TipoPropostaDocumento" EntitySet="TipoPropostaDocumento" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

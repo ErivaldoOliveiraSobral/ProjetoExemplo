@@ -1,0 +1,10 @@
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.Scripts\bin\Debug\PortalDeFluxos.NOTIF.Scripts.dll
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.Scripts\bin\Debug\PortalDeFluxos.NOTIF.Scripts.pdb
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.Scripts\obj\Debug\PortalDeFluxos.NOTIF.Scripts.dll
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.Scripts\obj\Debug\PortalDeFluxos.NOTIF.Scripts.pdb
+C:\WS\WMO\NOTIF\trunk\APP\NOTIF\PortalDeFluxos.NOTIF.Scripts\obj\Debug\PortalDeFluxos.NOTIF.Scripts.csprojResolveAssemblyReference.cache
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.Scripts\bin\Debug\PortalDeFluxos.NOTIF.Scripts.dll
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.Scripts\bin\Debug\PortalDeFluxos.NOTIF.Scripts.pdb
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.Scripts\obj\Debug\PortalDeFluxos.NOTIF.Scripts.csprojResolveAssemblyReference.cache
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.Scripts\obj\Debug\PortalDeFluxos.NOTIF.Scripts.dll
+C:\WS\WMO\ProjetoExemplo_NOTIF\NOTIF\PortalDeFluxos.NOTIF.Scripts\obj\Debug\PortalDeFluxos.NOTIF.Scripts.pdb

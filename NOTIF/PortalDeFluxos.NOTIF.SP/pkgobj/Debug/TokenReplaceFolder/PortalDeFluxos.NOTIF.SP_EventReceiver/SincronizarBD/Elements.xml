@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <Receivers ListUrl="Lists/NOTIF">
+      <Receiver>
+        <Name>SincronizarBDItemUpdated</Name>
+        <Type>ItemUpdated</Type>
+        <Assembly>PortalDeFluxos.NOTIF.SP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9bc490e05e1d16a6</Assembly>
+        <Class>PortalDeFluxos.NOTIF.SP.EventReceiver.SincronizarBD.SincronizarBD</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+      <Receiver>
+        <Name>SincronizarBDItemDeleted</Name>
+        <Type>ItemDeleted</Type>
+        <Assembly>PortalDeFluxos.NOTIF.SP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9bc490e05e1d16a6</Assembly>
+        <Class>PortalDeFluxos.NOTIF.SP.EventReceiver.SincronizarBD.SincronizarBD</Class>
+        <SequenceNumber>10000</SequenceNumber>
+      </Receiver>
+  </Receivers>
+</Elements>

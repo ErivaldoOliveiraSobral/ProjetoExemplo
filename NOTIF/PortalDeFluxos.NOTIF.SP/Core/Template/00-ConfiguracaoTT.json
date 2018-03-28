@@ -1,0 +1,37 @@
+﻿{
+    "UrlSite": "http://pi",
+    "NomeControle": "ucNOTIF",
+    "Menus": [
+        {
+            "IdMenu": "menuProposta",
+            "NomeMenu": "Proposta",
+            "Selecionado": true,
+            "IdPlaceHolder": ""
+        },
+        {
+            "IdMenu": "menuNotificacoes",
+            "NomeMenu": "Gestão das Notificações",
+            "Selecionado": false,
+            "IdPlaceHolder": ""
+        },
+        {
+            "IdMenu": "menuAcoes",
+            "NomeMenu": "Ações",
+            "Selecionado": false,
+            "IdPlaceHolder": ""
+        },
+        {
+            "IdMenu": "menuObservacoes",
+            "NomeMenu": "Observações",
+            "Selecionado": false,
+            "IdPlaceHolder": ""
+        }
+    ],
+    "NomeLista": "NOTIF",
+    "entidadeLista": "ListaSP_NOTIF",
+    "NaoObrigatoriosLista": [
+        "ComentariosMovimentacao",
+        "ClausulasAlteradas"
+    ],
+    "entidadesBD": [ "ListaNOTIF" ]
+}

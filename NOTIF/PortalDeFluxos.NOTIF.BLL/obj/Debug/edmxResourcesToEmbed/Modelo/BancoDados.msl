@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BancoDadosModelStoreContainer" CdmEntityContainer="BancoDados">
+    <EntitySetMapping Name="ListaNOTIF">
+      <EntityTypeMapping TypeName="BancoDadosModel.ListaNOTIF">
+        <MappingFragment StoreEntitySet="ListaNOTIF">
+          <ScalarProperty Name="RelacoesSetoriais_Data" ColumnName="RelacoesSetoriais_Data" />
+          <ScalarProperty Name="RelacoesSetoriais_Observacao" ColumnName="RelacoesSetoriais_Observacao" />
+          <ScalarProperty Name="RelacoesSetoriais_OrgaoDenuncia" ColumnName="RelacoesSetoriais_OrgaoDenuncia" />
+          <ScalarProperty Name="RelacoesSetoriais_FaseDenuncia" ColumnName="RelacoesSetoriais_FaseDenuncia" />
+          <ScalarProperty Name="Juridico_DataAcao" ColumnName="Juridico_DataAcao" />
+          <ScalarProperty Name="Juridico_Observacao" ColumnName="Juridico_Observacao" />
+          <ScalarProperty Name="Juridico_TipoAcaoJudicial" ColumnName="Juridico_TipoAcaoJudicial" />
+          <ScalarProperty Name="Juridico_FasesJudicializacao" ColumnName="Juridico_FasesJudicializacao" />
+          <ScalarProperty Name="Comentario" ColumnName="Comentario" />
+          <ScalarProperty Name="Consumo" ColumnName="Consumo" />
+          <ScalarProperty Name="StatusLoja" ColumnName="StatusLoja" />
+          <ScalarProperty Name="OutroTipoNotificacao" ColumnName="OutroTipoNotificacao" />
+          <ScalarProperty Name="TipoNotificacao" ColumnName="TipoNotificacao" />
+          <ScalarProperty Name="NumeroContrato" ColumnName="NumeroContrato" />
+          <ScalarProperty Name="NomeContrato" ColumnName="NomeContrato" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+          <ScalarProperty Name="Cep" ColumnName="Cep" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="CNPJ" ColumnName="CNPJ" />
+          <ScalarProperty Name="Mercado" ColumnName="Mercado" />
+          <ScalarProperty Name="Farol" ColumnName="Farol" />
+          <ScalarProperty Name="DataNotificacao" ColumnName="DataNotificacao" />
+          <ScalarProperty Name="NotificacaoPadrao" ColumnName="NotificacaoPadrao" />
+          <ScalarProperty Name="AprovacaoGRDV" ColumnName="AprovacaoGRDV" />
+          <ScalarProperty Name="EnvolvimentoPlanejamento" ColumnName="EnvolvimentoPlanejamento" />
+          <ScalarProperty Name="UtilizaZoneamentoGT" ColumnName="UtilizaZoneamentoGT" />
+          <ScalarProperty Name="UtilizaZoneamentoGR" ColumnName="UtilizaZoneamentoGR" />
+          <ScalarProperty Name="UtilizaZoneamentoGdr" ColumnName="UtilizaZoneamentoGdr" />
+          <ScalarProperty Name="UtilizaZoneamentoDiretor" ColumnName="UtilizaZoneamentoDiretor" />
+          <ScalarProperty Name="UtilizaZoneamentoCdr" ColumnName="UtilizaZoneamentoCdr" />
+          <ScalarProperty Name="UtilizaZoneamentoPadrao" ColumnName="UtilizaZoneamentoPadrao" />
+          <ScalarProperty Name="LoginGDR" ColumnName="LoginGDR" />
+          <ScalarProperty Name="LoginCDR" ColumnName="LoginCDR" />
+          <ScalarProperty Name="LoginDiretorVendas" ColumnName="LoginDiretorVendas" />
+          <ScalarProperty Name="LoginGerenteRegiao" ColumnName="LoginGerenteRegiao" />
+          <ScalarProperty Name="LoginGerenteTerritorio" ColumnName="LoginGerenteTerritorio" />
+          <ScalarProperty Name="DescricaoEtapa" ColumnName="DescricaoEtapa" />
+          <ScalarProperty Name="ContratoPadrao" ColumnName="ContratoPadrao" />
+          <ScalarProperty Name="BuscaDocumentos" ColumnName="BuscaDocumentos" />
+          <ScalarProperty Name="DescricaoEstadoAtualFluxo" ColumnName="DescricaoEstadoAtualFluxo" />
+          <ScalarProperty Name="NumeroSiteCode" ColumnName="NumeroSiteCode" />
+          <ScalarProperty Name="NumeroIBM" ColumnName="NumeroIBM" />
+          <ScalarProperty Name="DescricaoRazaoSocial" ColumnName="DescricaoRazaoSocial" />
+          <ScalarProperty Name="TituloProposta" ColumnName="TituloProposta" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="CodigoLista" ColumnName="CodigoLista" />
+          <ScalarProperty Name="CodigoItem" ColumnName="CodigoItem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaNOTIFNotificacoes">
+      <EntityTypeMapping TypeName="BancoDadosModel.ListaNOTIFNotificacoes">
+        <MappingFragment StoreEntitySet="ListaNOTIFNotificacoes">
+          <ScalarProperty Name="NotificacaoPadrao" ColumnName="NotificacaoPadrao" />
+          <ScalarProperty Name="FormaEnvio" ColumnName="FormaEnvio" />
+          <ScalarProperty Name="GrauNotificacao" ColumnName="GrauNotificacao" />
+          <ScalarProperty Name="EnvolvimentoPlanejamento" ColumnName="EnvolvimentoPlanejamento" />
+          <ScalarProperty Name="AprovacaoGRDV" ColumnName="AprovacaoGRDV" />
+          <ScalarProperty Name="DataNotificacao" ColumnName="DataNotificacao" />
+          <ScalarProperty Name="DataFimContrato" ColumnName="DataFimContrato" />
+          <ScalarProperty Name="DataInicioContrato" ColumnName="DataInicioContrato" />
+          <ScalarProperty Name="Observacao" ColumnName="Observacao" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="NumeroNotificacao" ColumnName="NumeroNotificacao" />
+          <ScalarProperty Name="NotifAtiva" ColumnName="NotifAtiva" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="CodigoItem" ColumnName="CodigoItem" />
+          <ScalarProperty Name="IdNotificacao" ColumnName="IdNotificacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

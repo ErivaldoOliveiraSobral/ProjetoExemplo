@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="Fluxos de aprovação do projeto PortalDeFluxos.NOTIF.SP" Id="a8e83aeb-a55d-48a8-ab14-6e3a02209846" Scope="Web" Title="Raizen -PortalDeFluxos.NOTIF.SP - Fluxo">
+  <ElementManifests>
+    <ElementManifest Location="wfsvc\Elements.xml" />
+    <ElementFile Location="Files\wfsvc\11e58d9d44464a7599c9f31f6364cc72\workflow.xaml" />
+    <ElementFile Location="Files\wfsvc\11e58d9d44464a7599c9f31f6364cc72\WorkflowAssociation_75436d92df844cc38624a93822bd2f55" />
+    <ElementManifest Location="wfsvc11e58d9d44464a7599c9f31f6364cc72_\Elements.xml" />
+  </ElementManifests>
+</Feature>

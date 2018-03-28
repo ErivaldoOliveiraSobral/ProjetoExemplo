@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Feature xmlns="http://schemas.microsoft.com/sharepoint/" Description="Registra um Event Receiver para sincronizar a lista no banco de dados do projeto PortalDeFluxos.NOTIF.SP." Id="83ba0866-67e5-4387-8863-66ad85ad81c0" ReceiverAssembly="PortalDeFluxos.NOTIF.SP, Version=1.0.0.0, Culture=neutral, PublicKeyToken=9bc490e05e1d16a6" ReceiverClass="PortalDeFluxos.NOTIF.SP.Features.EventReceiver.EventReceiverEventReceiver" Scope="Web" Title="Raizen - Portal de fluxos - PortalDeFluxos.NOTIF.SP - Sincronizar Lista ">
+  <ElementManifests>
+    <ElementManifest Location="SincronizarBD\Elements.xml" />
+  </ElementManifests>
+</Feature>

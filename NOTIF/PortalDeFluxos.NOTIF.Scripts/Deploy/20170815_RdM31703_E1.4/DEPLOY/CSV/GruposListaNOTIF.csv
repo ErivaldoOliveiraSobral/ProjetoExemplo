@@ -1,0 +1,15 @@
+﻿Nome;Roles
+Grupo Administradores TI Infra;Full Control,Editar Gridview Documentos
+Grupo Administradores TI Sistemas;Contribute,Cancelar Fluxo,Delegar Tarefa,Obter SAE,Excluir Anexo
+Grupo Administradores Portal;Raizen Colaborador,Cancelar Fluxo,Delegar Tarefa,Obter SAE,Excluir Anexo,Editar Gridview Documentos,Incluir Anexo
+Grupo Estrutura Comercial - GT;Raizen Colaborador,Raizen Estrutura Comercial,Leitura,Incluir Anexo
+Grupo Estrutura Comercial - GR;Raizen Colaborador,Raizen Estrutura Comercial,Leitura,Incluir Anexo,Incluir Comentário
+Grupo Estrutura Comercial - Diretor;Raizen Colaborador,Raizen Estrutura Comercial,Leitura,Incluir Anexo,Incluir Comentário
+Grupo Estrutura Comercial - CDR;Raizen Colaborador,Raizen Estrutura Comercial,Leitura,Incluir Anexo
+Grupo Estrutura Comercial - GDR;Raizen Colaborador,Raizen Estrutura Comercial,Leitura,Incluir Anexo
+Grupo Notificações;Raizen Colaborador,Leitura,Incluir Anexo,Cancelar Fluxo,Incluir Comentário
+Grupo Contratos Emissão;Raizen Colaborador,Leitura,Incluir Anexo,Excluir Anexo,Incluir Comentário
+Grupo Contratos - Envio Notificação;Leitura,Incluir Anexo,Excluir Anexo,Incluir Comentário
+Grupo Contratos - Recebimento Notificação;Leitura,Incluir Anexo,Incluir Comentário
+Grupo Jurídico Notificações;Raizen Colaborador;Leitura,Incluir Anexo,Incluir Comentário
+Grupo Planejamento;Leitura,Incluir Anexo,Incluir Comentário

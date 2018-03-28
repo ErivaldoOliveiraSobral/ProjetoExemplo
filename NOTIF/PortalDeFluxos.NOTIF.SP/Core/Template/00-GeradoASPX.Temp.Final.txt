@@ -1,0 +1,805 @@
+﻿<%@ Assembly Name="$SharePoint.Project.AssemblyFullName$" %>
+<%@ Assembly Name="Microsoft.Web.CommandUI, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="SharePoint" Namespace="Microsoft.SharePoint.WebControls" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="Utilities" Namespace="Microsoft.SharePoint.Utilities" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Register TagPrefix="asp" Namespace="System.Web.UI" Assembly="System.Web.Extensions, Version=3.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" %>
+<%@ Import Namespace="Microsoft.SharePoint" %>
+<%@ Register TagPrefix="WebPartPages" Namespace="Microsoft.SharePoint.WebPartPages" Assembly="Microsoft.SharePoint, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" %>
+<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ucNOTIF.ascx.cs" Inherits="PortalDeFluxos.NOTIF.SP.ControlTemplates.PortalDeFluxos.NOTIF.SP.ucNOTIF"%>
+<div id="menuProposta" class="tab-pane fade in active">
+	<asp:UpdatePanel runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional" ID="uppmenuProposta">
+        <ContentTemplate>
+			<div class="row form-group-core">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+								<div class="row">				<div runat="server" ID="divBuscarEstruturaComercial_IBM" style="width: 100%"></div>			</div>
+			<div class="row">				<asp:PlaceHolder runat="server" ID="plhEstruturaGt"></asp:PlaceHolder>			</div>
+			<div class="row">				<asp:PlaceHolder runat="server" ID="plhEstruturaGr"></asp:PlaceHolder>			</div>
+			<div class="row">				<asp:PlaceHolder runat="server" ID="plhEstruturaDiretor"></asp:PlaceHolder>			</div>
+			<div class="row">				<asp:PlaceHolder runat="server" ID="plhEstruturaCdr"></asp:PlaceHolder>			</div>
+			<div class="row">				<asp:PlaceHolder runat="server" ID="plhEstruturaGdr"></asp:PlaceHolder>			</div>
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Tipo Notificação</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_TipoNotificacao" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>StatusLoja</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_StatusLoja" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Consumo</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_Consumo" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>EnvolvimentoPlanejamento</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_EnvolvimentoPlanejamento" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="EnvolvimentoPlanejamento" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>NotificacaoPadrao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_NotificacaoPadrao" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="NotificacaoPadrao" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>AprovacaoGRDV</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_AprovacaoGRDV" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="AprovacaoGRDV" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Farol</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:DropDownList runat="server" ID="sp_Farol" CssClass="reiniciarWF form-control" type="DropDownList" required=""></asp:DropDownList>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Data da Notificação</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div id="dtp_DataNotificacao" class="input-group date time">
+	<asp:TextBox runat="server" ID="sp_DataNotificacao" CssClass="form-control datepicker"></asp:TextBox>
+	<span class="input-group-addon">
+		<i class="glyphicon glyphicon-calendar"></i>
+	</span>
+</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Número da Solicitação</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_Title" CssClass=" form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Razão Social</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_RazaoSocial" CssClass=" form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Etapa</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_Etapa" CssClass=" form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Estado Atual do Fluxo</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_EstadoAtualFluxo" CssClass=" form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Busca de Documentos</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_BuscaDocumentos" CssClass=" checkbox checkboxlist spanOverflow" Text="Busca de Documentos" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Contrato Padrão</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_ContratoPadrao" CssClass=" checkbox checkboxlist spanOverflow" Text="Contrato Padrão" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoGT</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_UtilizaZoneamentoGT" CssClass=" checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoGT" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoGR</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_UtilizaZoneamentoGR" CssClass=" checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoGR" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoDiretor</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_UtilizaZoneamentoDiretor" CssClass=" checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoDiretor" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoCdr</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_UtilizaZoneamentoCdr" CssClass=" checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoCdr" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoGdr</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="sp_UtilizaZoneamentoGdr" CssClass=" checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoGdr" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>ID</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Número da Solicitação</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="sp_Title" CssClass=" form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>CodigoItem</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_CodigoItem" CssClass="reiniciarWF form-control numero int" MaxLength="13" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>CodigoLista</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_CodigoLista" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>LoginInclusao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_LoginInclusao" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>DataInclusao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div id="dtp_DataInclusao" class="input-group date time">
+	<asp:TextBox runat="server" ID="bd_DataInclusao" CssClass="form-control datepicker"></asp:TextBox>
+	<span class="input-group-addon">
+		<i class="glyphicon glyphicon-calendar"></i>
+	</span>
+</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>LoginAlteracao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_LoginAlteracao" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>DataAlteracao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div id="dtp_DataAlteracao" class="input-group date time">
+	<asp:TextBox runat="server" ID="bd_DataAlteracao" CssClass="form-control datepicker"></asp:TextBox>
+	<span class="input-group-addon">
+		<i class="glyphicon glyphicon-calendar"></i>
+	</span>
+</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Ativo</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_Ativo" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="Ativo" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>TituloProposta</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_TituloProposta" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>DescricaoRazaoSocial</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_DescricaoRazaoSocial" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>NumeroIBM</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_NumeroIBM" CssClass="reiniciarWF form-control numero int" MaxLength="13" ></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>NumeroSiteCode</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_NumeroSiteCode" CssClass="reiniciarWF form-control numero int" MaxLength="13" ></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>DescricaoEstadoAtualFluxo</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_DescricaoEstadoAtualFluxo" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>BuscaDocumentos</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_BuscaDocumentos" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="BuscaDocumentos" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>ContratoPadrao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_ContratoPadrao" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="ContratoPadrao" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>DescricaoEtapa</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_DescricaoEtapa" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>LoginGerenteTerritorio</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_LoginGerenteTerritorio" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>LoginGerenteRegiao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_LoginGerenteRegiao" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>LoginDiretorVendas</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_LoginDiretorVendas" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>LoginCDR</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_LoginCDR" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>LoginGDR</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_LoginGDR" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoPadrao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_UtilizaZoneamentoPadrao" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoPadrao" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoCdr</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_UtilizaZoneamentoCdr" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoCdr" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoDiretor</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_UtilizaZoneamentoDiretor" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoDiretor" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoGdr</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_UtilizaZoneamentoGdr" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoGdr" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoGR</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_UtilizaZoneamentoGR" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoGR" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UtilizaZoneamentoGT</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_UtilizaZoneamentoGT" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="UtilizaZoneamentoGT" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>EnvolvimentoPlanejamento</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_EnvolvimentoPlanejamento" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="EnvolvimentoPlanejamento" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>AprovacaoGRDV</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_AprovacaoGRDV" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="AprovacaoGRDV" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>NotificacaoPadrao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:CheckBox runat="server" ID="bd_NotificacaoPadrao" CssClass="reiniciarWF checkbox checkboxlist spanOverflow" Text="NotificacaoPadrao" ></asp:CheckBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>DataNotificacao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div id="dtp_DataNotificacao" class="input-group date time">
+	<asp:TextBox runat="server" ID="bd_DataNotificacao" CssClass="form-control datepicker"></asp:TextBox>
+	<span class="input-group-addon">
+		<i class="glyphicon glyphicon-calendar"></i>
+	</span>
+</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Farol</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Farol" CssClass="reiniciarWF form-control" MaxLength="50" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Mercado</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Mercado" CssClass="reiniciarWF form-control numero int" MaxLength="13" ></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>CNPJ</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_CNPJ" CssClass="reiniciarWF form-control" MaxLength="18" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Endereco</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Endereco" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Bairro</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Bairro" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Cep</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Cep" CssClass="reiniciarWF form-control" MaxLength="9" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>UF</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_UF" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Cidade</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Cidade" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>NomeContrato</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_NomeContrato" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>NumeroContrato</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_NumeroContrato" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>TipoNotificacao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_TipoNotificacao" CssClass="reiniciarWF form-control numero int" MaxLength="13" ></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>OutroTipoNotificacao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_OutroTipoNotificacao" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>StatusLoja</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_StatusLoja" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Consumo</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Consumo" CssClass="reiniciarWF form-control numero decimal3" MaxLength="20" ></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Comentario</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Comentario" CssClass="reiniciarWF form-control" MaxLength="5000" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Juridico_FasesJudicializacao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Juridico_FasesJudicializacao" CssClass="reiniciarWF form-control numero int" MaxLength="13" ></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Juridico_TipoAcaoJudicial</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Juridico_TipoAcaoJudicial" CssClass="reiniciarWF form-control numero int" MaxLength="13" ></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Juridico_Observacao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_Juridico_Observacao" CssClass="reiniciarWF form-control" MaxLength="5000" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>Juridico_DataAcao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div id="dtp_Juridico_DataAcao" class="input-group date time">
+	<asp:TextBox runat="server" ID="bd_Juridico_DataAcao" CssClass="form-control datepicker"></asp:TextBox>
+	<span class="input-group-addon">
+		<i class="glyphicon glyphicon-calendar"></i>
+	</span>
+</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>RelacoesSetoriais_FaseDenuncia</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_RelacoesSetoriais_FaseDenuncia" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>RelacoesSetoriais_OrgaoDenuncia</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_RelacoesSetoriais_OrgaoDenuncia" CssClass="reiniciarWF form-control" MaxLength="255" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>RelacoesSetoriais_Observacao</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_RelacoesSetoriais_Observacao" CssClass="reiniciarWF form-control" MaxLength="5000" required=""></asp:TextBox>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>RelacoesSetoriais_Data</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<div id="dtp_RelacoesSetoriais_Data" class="input-group date time">
+	<asp:TextBox runat="server" ID="bd_RelacoesSetoriais_Data" CssClass="form-control datepicker"></asp:TextBox>
+	<span class="input-group-addon">
+		<i class="glyphicon glyphicon-calendar"></i>
+	</span>
+</div>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>ListaNOTIFNotificacoes</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:DropDownList runat="server" ID="bd_ListaNOTIFNotificacoes" CssClass="reiniciarWF form-control" type="DropDownList" required=""></asp:DropDownList>
+		</div>
+		</div>
+
+		<div class="row">
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<span>TotalRecordCount</span>
+		</div>
+		<div class="col-xs-12 col-sm-6 col-md-6">
+			<asp:TextBox runat="server" ID="bd_TotalRecordCount" CssClass="reiniciarWF form-control numero int" MaxLength="13" ></asp:TextBox>
+		</div>
+		</div>
+
+
+
+					
+					
+				</div>
+			</div>
+		</ContentTemplate>
+    </asp:UpdatePanel>
+</div>
+<div id="menuNotificacoes" class="tab-pane fade ">
+	<asp:UpdatePanel runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional" ID="uppmenuNotificacoes">
+        <ContentTemplate>
+			<div class="row form-group-core">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					
+					
+					
+				</div>
+			</div>
+		</ContentTemplate>
+    </asp:UpdatePanel>
+</div>
+<div id="menuAcoes" class="tab-pane fade ">
+	<asp:UpdatePanel runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional" ID="uppmenuAcoes">
+        <ContentTemplate>
+			<div class="row form-group-core">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					
+					
+					
+				</div>
+			</div>
+		</ContentTemplate>
+    </asp:UpdatePanel>
+</div>
+<div id="menuObservacoes" class="tab-pane fade ">
+	<asp:UpdatePanel runat="server" ChildrenAsTriggers="true" UpdateMode="Conditional" ID="uppmenuObservacoes">
+        <ContentTemplate>
+			<div class="row form-group-core">
+				<div class="col-xs-12 col-sm-6 col-md-6">
+					
+					
+					
+				</div>
+			</div>
+		</ContentTemplate>
+    </asp:UpdatePanel>
+</div>
+<div id="menuAnexo" class="tab-pane fade">
+	<div class="form-group">
+		<asp:PlaceHolder runat="server" ID="phUcAnexos"></asp:PlaceHolder>
+	</div>
+</div>
+<div class="row form-group form-group-button">
+	<asp:UpdatePanel runat="server" UpdateMode="Conditional" ID="uppFormularioBtn">
+		<ContentTemplate>
+			<div class="col-xs-6 col-sm-offset-0 col-md-offset-0">
+				<asp:Button runat="server" ID="btnAnexoPorEmail" OnClick="btnAnexoPorEmail_Click" Text="Anexo por E-mail" CssClass="btn btn-warning .btn-md" formnovalidate="formnovalidate" />
+				<asp:Button runat="server" ID="btnObterPDF" OnClick="btnObterPDF_Click" Text="Obter PDF" CssClass="btn btn-warning .btn-md" formnovalidate="formnovalidate" />
+                
+			</div>
+			<div class="col-xs-6" style="text-align: right;">
+				<asp:Button runat="server" ID="btnReiniciarFluxo" OnClick="btnReiniciarFluxo_Click" Text="Reiniciar o fluxo" CssClass="btn btn-primary .btn-md" Title="Só pode ser usado em casos de aprovação parada por erro." />
+				<asp:Button runat="server" ID="btnIniciar" OnClick="btnSalvarIniciar_Click" OnClientClick="return raizenForm.events.submitForm();" Text="Enviar para aprovação" CssClass="btn btn-primary .btn-md btnIniciarFluxo" />
+				<asp:Button runat="server" ID="btnSalvar" OnClick="btnSalvar_Click" Text="Salvar" CssClass="btn btn-primary .btn-md" formnovalidate="formnovalidate" />
+				<asp:Button runat="server" ID="btnCancelar" OnClick="btnCancelar_Click" Text="Sair" CssClass="btn btn-danger .btn-md" formnovalidate="formnovalidate" />
+			</div>
+		</ContentTemplate>
+	</asp:UpdatePanel>
+</div>	
+
+

@@ -1,0 +1,570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PortalDeFluxoModelStoreContainer" CdmEntityContainer="PortalDeFluxoEntities">
+    <EntitySetMapping Name="Cidade">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Cidade)">
+        <MappingFragment StoreEntitySet="Cidade">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdEstado" ColumnName="IdEstado" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="SiglaEstado" ColumnName="SiglaEstado" />
+          <ScalarProperty Name="SiglaPais" ColumnName="SiglaPais" />
+          <ScalarProperty Name="CodigoSistemaRBC" ColumnName="CodigoSistemaRBC" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Delegacao">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Delegacao)">
+        <MappingFragment StoreEntitySet="Delegacao">
+          <ScalarProperty Name="IdDelegacao" ColumnName="IdDelegacao" />
+          <ScalarProperty Name="LoginDe" ColumnName="LoginDe" />
+          <ScalarProperty Name="NomeDe" ColumnName="NomeDe" />
+          <ScalarProperty Name="EmailDe" ColumnName="EmailDe" />
+          <ScalarProperty Name="LoginPara" ColumnName="LoginPara" />
+          <ScalarProperty Name="NomePara" ColumnName="NomePara" />
+          <ScalarProperty Name="EmailPara" ColumnName="EmailPara" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="CodigoDelegacao2007" ColumnName="CodigoDelegacao2007" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documento">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Documento)">
+        <MappingFragment StoreEntitySet="Documento">
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Agrupador" ColumnName="Agrupador" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmailAttachment">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.EmailAttachment)">
+        <MappingFragment StoreEntitySet="EmailAttachment">
+          <ScalarProperty Name="IdEmailAttachment" ColumnName="IdEmailAttachment" />
+          <ScalarProperty Name="TipoEmail" ColumnName="TipoEmail" />
+          <ScalarProperty Name="Processado" ColumnName="Processado" />
+          <ScalarProperty Name="CodigoLista" ColumnName="CodigoLista" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="NomeProposta" ColumnName="NomeProposta" />
+          <ScalarProperty Name="Ibm" ColumnName="Ibm" />
+          <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+          <ScalarProperty Name="GerenteTerritorio" ColumnName="GerenteTerritorio" />
+          <ScalarProperty Name="GerenteRegiao" ColumnName="GerenteRegiao" />
+          <ScalarProperty Name="DiretorVendas" ColumnName="DiretorVendas" />
+          <ScalarProperty Name="Cdr" ColumnName="Cdr" />
+          <ScalarProperty Name="Gdr" ColumnName="Gdr" />
+          <ScalarProperty Name="Ambiente2013" ColumnName="Ambiente2013" />
+          <ScalarProperty Name="DescricaoAssuntoEmail" ColumnName="DescricaoAssuntoEmail" />
+          <ScalarProperty Name="DescricaoMensagemEmail" ColumnName="DescricaoMensagemEmail" />
+          <ScalarProperty Name="EmailUsuario" ColumnName="EmailUsuario" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estado">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Estado)">
+        <MappingFragment StoreEntitySet="Estado">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="UF" ColumnName="UF" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstruturaComercial">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.EstruturaComercial)">
+        <MappingFragment StoreEntitySet="EstruturaComercial">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IBM" ColumnName="IBM" />
+          <ScalarProperty Name="SiteCode" ColumnName="SiteCode" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="GR" ColumnName="GR" />
+          <ScalarProperty Name="DV" ColumnName="DV" />
+          <ScalarProperty Name="CDR" ColumnName="CDR" />
+          <ScalarProperty Name="GDR" ColumnName="GDR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstruturaComercial_Modificada">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.EstruturaComercial_Modificada)">
+        <MappingFragment StoreEntitySet="EstruturaComercial_Modificada">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IBM" ColumnName="IBM" />
+          <ScalarProperty Name="SiteCode" ColumnName="SiteCode" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="GR" ColumnName="GR" />
+          <ScalarProperty Name="DV" ColumnName="DV" />
+          <ScalarProperty Name="CDR" ColumnName="CDR" />
+          <ScalarProperty Name="GDR" ColumnName="GDR" />
+          <ScalarProperty Name="Processado" ColumnName="Processado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EstruturaComercial_Salesforce">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.EstruturaComercial_Salesforce)">
+        <MappingFragment StoreEntitySet="EstruturaComercial_Salesforce">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IBM" ColumnName="IBM" />
+          <ScalarProperty Name="SiteCode" ColumnName="SiteCode" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="GR" ColumnName="GR" />
+          <ScalarProperty Name="DV" ColumnName="DV" />
+          <ScalarProperty Name="CDR" ColumnName="CDR" />
+          <ScalarProperty Name="GDR" ColumnName="GDR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HorarioVerao">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.HorarioVerao)">
+        <MappingFragment StoreEntitySet="HorarioVerao">
+          <ScalarProperty Name="IdHorarioVerao" ColumnName="IdHorarioVerao" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFim" ColumnName="DataFim" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ListaHist">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.ListaHist)">
+        <MappingFragment StoreEntitySet="ListaHist">
+          <ScalarProperty Name="IdListaHist" ColumnName="IdListaHist" />
+          <ScalarProperty Name="CodigoLista" ColumnName="CodigoLista" />
+          <ScalarProperty Name="CodigoItem" ColumnName="CodigoItem" />
+          <ScalarProperty Name="XmlAlteracao" ColumnName="XmlAlteracao" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Log">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Log)">
+        <MappingFragment StoreEntitySet="Log">
+          <ScalarProperty Name="IdLog" ColumnName="IdLog" />
+          <ScalarProperty Name="NomeProcesso" ColumnName="NomeProcesso" />
+          <ScalarProperty Name="DescricaoOrigem" ColumnName="DescricaoOrigem" />
+          <ScalarProperty Name="DescricaoMensagem" ColumnName="DescricaoMensagem" />
+          <ScalarProperty Name="DescricaoDetalhe" ColumnName="DescricaoDetalhe" />
+          <ScalarProperty Name="Erro" ColumnName="Erro" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LogIntegracao">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.LogIntegracao)">
+        <MappingFragment StoreEntitySet="LogIntegracao">
+          <ScalarProperty Name="IdLogIntegracao" ColumnName="IdLogIntegracao" />
+          <ScalarProperty Name="DataExecucao" ColumnName="DataExecucao" />
+          <ScalarProperty Name="WorkflowProgressID" ColumnName="WorkflowProgressID" />
+          <ScalarProperty Name="QuantidadeLista" ColumnName="QuantidadeLista" />
+          <ScalarProperty Name="QuantidadeInstancia" ColumnName="QuantidadeInstancia" />
+          <ScalarProperty Name="QuantidadeTarefa" ColumnName="QuantidadeTarefa" />
+          <ScalarProperty Name="QuantidadeDelegacao" ColumnName="QuantidadeDelegacao" />
+          <ScalarProperty Name="TempoExecucao" ColumnName="TempoExecucao" />
+          <ScalarProperty Name="ExecucaoCompleta" ColumnName="ExecucaoCompleta" />
+          <ScalarProperty Name="ExecucaoGestaoFluxo" ColumnName="ExecucaoGestaoFluxo" />
+          <ScalarProperty Name="QuantidadeGestaoFluxoFluxo" ColumnName="QuantidadeGestaoFluxoFluxo" />
+          <ScalarProperty Name="QuantidadeGestaoFluxoTarefa" ColumnName="QuantidadeGestaoFluxoTarefa" />
+          <ScalarProperty Name="QuantidadeGestaoFluxoTarefaStatus" ColumnName="QuantidadeGestaoFluxoTarefaStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parametro">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Parametro)">
+        <MappingFragment StoreEntitySet="Parametro">
+          <ScalarProperty Name="IdParametro" ColumnName="IdParametro" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PropostaDocumento">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.PropostaDocumento)">
+        <MappingFragment StoreEntitySet="PropostaDocumento">
+          <ScalarProperty Name="IdPropostaDocumento" ColumnName="IdPropostaDocumento" />
+          <ScalarProperty Name="IdTipoProposta" ColumnName="IdTipoProposta" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicoAgendado">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.ServicoAgendado)">
+        <MappingFragment StoreEntitySet="ServicoAgendado">
+          <ScalarProperty Name="IdServicoAgendado" ColumnName="IdServicoAgendado" />
+          <ScalarProperty Name="NomeAssemblyFullName" ColumnName="NomeAssemblyFullName" />
+          <ScalarProperty Name="NomeAssemblyType" ColumnName="NomeAssemblyType" />
+          <ScalarProperty Name="DescricaoAgenda" ColumnName="DescricaoAgenda" />
+          <ScalarProperty Name="DataUltimaExecucao" ColumnName="DataUltimaExecucao" />
+          <ScalarProperty Name="DataProximaExecucao" ColumnName="DataProximaExecucao" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Logar" ColumnName="Logar" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TabelaExemplo">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.TabelaExemplo)">
+        <MappingFragment StoreEntitySet="TabelaExemplo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TarefaHist">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.TarefaHist)">
+        <MappingFragment StoreEntitySet="TarefaHist">
+          <ScalarProperty Name="IdTarefaHist" ColumnName="IdTarefaHist" />
+          <ScalarProperty Name="IdTarefa" ColumnName="IdTarefa" />
+          <ScalarProperty Name="TipoTarefaHist" ColumnName="TipoTarefaHist" />
+          <ScalarProperty Name="LoginDe" ColumnName="LoginDe" />
+          <ScalarProperty Name="LoginPara" ColumnName="LoginPara" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="ComentarioDelegacao" ColumnName="ComentarioDelegacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoProposta">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.TipoProposta)">
+        <MappingFragment StoreEntitySet="TipoProposta">
+          <ScalarProperty Name="IdTipoProposta" ColumnName="IdTipoProposta" />
+          <ScalarProperty Name="IdTipoPropostaPai" ColumnName="IdTipoPropostaPai" />
+          <ScalarProperty Name="Proposta" ColumnName="Proposta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoPropostaDocumento">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.TipoPropostaDocumento)">
+        <MappingFragment StoreEntitySet="TipoPropostaDocumento">
+          <ScalarProperty Name="IdTipoPropostaDocumento" ColumnName="IdTipoPropostaDocumento" />
+          <ScalarProperty Name="IdItem" ColumnName="IdItem" />
+          <ScalarProperty Name="IdTipoProposta" ColumnName="IdTipoProposta" />
+          <ScalarProperty Name="IdDocumento" ColumnName="IdDocumento" />
+          <ScalarProperty Name="Tem" ColumnName="Tem" />
+          <ScalarProperty Name="Atende" ColumnName="Atende" />
+          <ScalarProperty Name="Excecao" ColumnName="Excecao" />
+          <ScalarProperty Name="Dispensado" ColumnName="Dispensado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WFGestaoFluxo_Fluxo">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.WFGestaoFluxo_Fluxo)">
+        <MappingFragment StoreEntitySet="WFGestaoFluxo_Fluxo">
+          <ScalarProperty Name="CD_SEQ_FLUXO" ColumnName="CD_SEQ_FLUXO" />
+          <ScalarProperty Name="CD_ITEM" ColumnName="CD_ITEM" />
+          <ScalarProperty Name="CD_LISTA" ColumnName="CD_LISTA" />
+          <ScalarProperty Name="NM_LISTA" ColumnName="NM_LISTA" />
+          <ScalarProperty Name="NM_SOLICITACAO" ColumnName="NM_SOLICITACAO" />
+          <ScalarProperty Name="NM_IBM" ColumnName="NM_IBM" />
+          <ScalarProperty Name="NM_RAZAO_SOCIAL" ColumnName="NM_RAZAO_SOCIAL" />
+          <ScalarProperty Name="NM_SOLICITANTE" ColumnName="NM_SOLICITANTE" />
+          <ScalarProperty Name="NM_STATUS" ColumnName="NM_STATUS" />
+          <ScalarProperty Name="NM_ATIVO" ColumnName="NM_ATIVO" />
+          <ScalarProperty Name="NM_GA" ColumnName="NM_GA" />
+          <ScalarProperty Name="NM_GT" ColumnName="NM_GT" />
+          <ScalarProperty Name="DT_ENTRADA" ColumnName="DT_ENTRADA" />
+          <ScalarProperty Name="DT_SAIDA" ColumnName="DT_SAIDA" />
+          <ScalarProperty Name="DT_CRIACAO" ColumnName="DT_CRIACAO" />
+          <ScalarProperty Name="DT_MODIFICACAO" ColumnName="DT_MODIFICACAO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WFGestaoFluxo_Tarefa">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.WFGestaoFluxo_Tarefa)">
+        <MappingFragment StoreEntitySet="WFGestaoFluxo_Tarefa">
+          <ScalarProperty Name="CD_TAREFA" ColumnName="CD_TAREFA" />
+          <ScalarProperty Name="CD_FLUXO" ColumnName="CD_FLUXO" />
+          <ScalarProperty Name="CD_WORKFLOW_ID" ColumnName="CD_WORKFLOW_ID" />
+          <ScalarProperty Name="CD_LISTA_TAREFA" ColumnName="CD_LISTA_TAREFA" />
+          <ScalarProperty Name="NR_ESTADO_ID" ColumnName="NR_ESTADO_ID" />
+          <ScalarProperty Name="NR_ACAO_ID" ColumnName="NR_ACAO_ID" />
+          <ScalarProperty Name="NR_ESTADO_ACAO_ID" ColumnName="NR_ESTADO_ACAO_ID" />
+          <ScalarProperty Name="SN_FLUXO_ATUAL" ColumnName="SN_FLUXO_ATUAL" />
+          <ScalarProperty Name="NM_TAREFA" ColumnName="NM_TAREFA" />
+          <ScalarProperty Name="NM_PAPEL" ColumnName="NM_PAPEL" />
+          <ScalarProperty Name="NM_RESPONSAVEL" ColumnName="NM_RESPONSAVEL" />
+          <ScalarProperty Name="NM_RESPONSAVEL_ORIGINAL" ColumnName="NM_RESPONSAVEL_ORIGINAL" />
+          <ScalarProperty Name="NM_RESPONSAVEL_LOGIN" ColumnName="NM_RESPONSAVEL_LOGIN" />
+          <ScalarProperty Name="NM_RESPONSAVEL_LOGIN_ORIGINAL" ColumnName="NM_RESPONSAVEL_LOGIN_ORIGINAL" />
+          <ScalarProperty Name="NM_SUPERVISORES" ColumnName="NM_SUPERVISORES" />
+          <ScalarProperty Name="NM_SUPERVISORES_LOGIN" ColumnName="NM_SUPERVISORES_LOGIN" />
+          <ScalarProperty Name="NM_STATUS" ColumnName="NM_STATUS" />
+          <ScalarProperty Name="NM_COMENTARIOS" ColumnName="NM_COMENTARIOS" />
+          <ScalarProperty Name="SN_DELEGADO_SUPERVISOR" ColumnName="SN_DELEGADO_SUPERVISOR" />
+          <ScalarProperty Name="NR_EMAIL_SUPERVISOR" ColumnName="NR_EMAIL_SUPERVISOR" />
+          <ScalarProperty Name="NR_EMAIL_RESPONSAVEL" ColumnName="NR_EMAIL_RESPONSAVEL" />
+          <ScalarProperty Name="NR_SLA_ESPERADO" ColumnName="NR_SLA_ESPERADO" />
+          <ScalarProperty Name="NR_SLA_REAL" ColumnName="NR_SLA_REAL" />
+          <ScalarProperty Name="DT_SLA" ColumnName="DT_SLA" />
+          <ScalarProperty Name="DT_SAIDA" ColumnName="DT_SAIDA" />
+          <ScalarProperty Name="DT_CRIACAO" ColumnName="DT_CRIACAO" />
+          <ScalarProperty Name="DT_MODIFICACAO" ColumnName="DT_MODIFICACAO" />
+          <ScalarProperty Name="DT_DELEGACAO_PROGRAMADA" ColumnName="DT_DELEGACAO_PROGRAMADA" />
+          <ScalarProperty Name="CD_ITEM_TAREFA" ColumnName="CD_ITEM_TAREFA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lista">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Lista)">
+        <MappingFragment StoreEntitySet="Lista">
+          <ScalarProperty Name="CodigoLista" ColumnName="CodigoLista" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="DescricaoUrlLista" ColumnName="DescricaoUrlLista" />
+          <ScalarProperty Name="DescricaoUrlItem" ColumnName="DescricaoUrlItem" />
+          <ScalarProperty Name="DescricaoUrlTarefa" ColumnName="DescricaoUrlTarefa" />
+          <ScalarProperty Name="Ambiente2007" ColumnName="Ambiente2007" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AnoContratual">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.AnoContratual)">
+        <MappingFragment StoreEntitySet="AnoContratual">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IdProposta" ColumnName="IdProposta" />
+          <ScalarProperty Name="IdTipoProposta" ColumnName="IdTipoProposta" />
+          <ScalarProperty Name="CasoBase" ColumnName="CasoBase" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Ano" ColumnName="Ano" />
+          <ScalarProperty Name="Bonificacao" ColumnName="Bonificacao" />
+          <ScalarProperty Name="BonificacaoPorAno" ColumnName="BonificacaoPorAno" />
+          <ScalarProperty Name="CurvaMaturacaoVolumePadrao" ColumnName="CurvaMaturacaoVolumePadrao" />
+          <ScalarProperty Name="CurvaMaturacaoVolumeExcecao" ColumnName="CurvaMaturacaoVolumeExcecao" />
+          <ScalarProperty Name="OutrasReceitas" ColumnName="OutrasReceitas" />
+          <ScalarProperty Name="OutrasDespesas" ColumnName="OutrasDespesas" />
+          <ScalarProperty Name="CurvaMaturacaoVolumes" ColumnName="CurvaMaturacaoVolumes" />
+          <ScalarProperty Name="OutrosFluxosPositivos" ColumnName="OutrosFluxosPositivos" />
+          <ScalarProperty Name="OutrosFluxosNegativos" ColumnName="OutrosFluxosNegativos" />
+          <ScalarProperty Name="Diesel" ColumnName="Diesel" />
+          <ScalarProperty Name="Otto" ColumnName="Otto" />
+          <ScalarProperty Name="OleoCombustivel" ColumnName="OleoCombustivel" />
+          <ScalarProperty Name="Arla" ColumnName="Arla" />
+          <ScalarProperty Name="CurvaMaturacaoFuels" ColumnName="CurvaMaturacaoFuels" />
+          <ScalarProperty Name="AluguelPago" ColumnName="AluguelPago" />
+          <ScalarProperty Name="AluguelRecebido" ColumnName="AluguelRecebido" />
+          <ScalarProperty Name="Manutencao" ColumnName="Manutencao" />
+          <ScalarProperty Name="MeioAmbiente" ColumnName="MeioAmbiente" />
+          <ScalarProperty Name="Terrenos" ColumnName="Terrenos" />
+          <ScalarProperty Name="EdificacoesPista" ColumnName="EdificacoesPista" />
+          <ScalarProperty Name="EdificacoesLoja" ColumnName="EdificacoesLoja" />
+          <ScalarProperty Name="Bombas" ColumnName="Bombas" />
+          <ScalarProperty Name="Tanques" ColumnName="Tanques" />
+          <ScalarProperty Name="ImagemRVI" ColumnName="ImagemRVI" />
+          <ScalarProperty Name="EquipamentosLoja" ColumnName="EquipamentosLoja" />
+          <ScalarProperty Name="CurvaMaturacaoLoja" ColumnName="CurvaMaturacaoLoja" />
+          <ScalarProperty Name="Gasolina" ColumnName="Gasolina" />
+          <ScalarProperty Name="Etanol" ColumnName="Etanol" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lembrete">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Lembrete)">
+        <MappingFragment StoreEntitySet="Lembrete">
+          <ScalarProperty Name="IdLembrete" ColumnName="IdLembrete" />
+          <ScalarProperty Name="IdTarefa" ColumnName="IdTarefa" />
+          <ScalarProperty Name="EmailPara" ColumnName="EmailPara" />
+          <ScalarProperty Name="LoginPara" ColumnName="LoginPara" />
+          <ScalarProperty Name="NomePara" ColumnName="NomePara" />
+          <ScalarProperty Name="DataEnvio" ColumnName="DataEnvio" />
+          <ScalarProperty Name="CopiarSuperior" ColumnName="CopiarSuperior" />
+          <ScalarProperty Name="EmailEnviado" ColumnName="EmailEnviado" />
+          <ScalarProperty Name="DescricaoAssunto" ColumnName="DescricaoAssunto" />
+          <ScalarProperty Name="DescricaoMensagem" ColumnName="DescricaoMensagem" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tarefa">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.Tarefa)">
+        <MappingFragment StoreEntitySet="Tarefa">
+          <ScalarProperty Name="ComentarioAprovacaoAutomatica" ColumnName="ComentarioAprovacaoAutomatica" />
+          <ScalarProperty Name="AprovadoAutomaticamente" ColumnName="AprovadoAutomaticamente" />
+          <ScalarProperty Name="DescricaoRespostaAutomatica" ColumnName="DescricaoRespostaAutomatica" />
+          <ScalarProperty Name="AprovacaoAutomatica" ColumnName="AprovacaoAutomatica" />
+          <ScalarProperty Name="IdTarefa" ColumnName="IdTarefa" />
+          <ScalarProperty Name="IdInstanciaFluxo" ColumnName="IdInstanciaFluxo" />
+          <ScalarProperty Name="CodigoTarefa" ColumnName="CodigoTarefa" />
+          <ScalarProperty Name="CodigoConfiguracao" ColumnName="CodigoConfiguracao" />
+          <ScalarProperty Name="AprovacaoPor" ColumnName="AprovacaoPor" />
+          <ScalarProperty Name="NomeTarefa" ColumnName="NomeTarefa" />
+          <ScalarProperty Name="NomeEtapa" ColumnName="NomeEtapa" />
+          <ScalarProperty Name="TipoTarefa" ColumnName="TipoTarefa" />
+          <ScalarProperty Name="DescricaoAreaResponsavel" ColumnName="DescricaoAreaResponsavel" />
+          <ScalarProperty Name="EmailResponsavel" ColumnName="EmailResponsavel" />
+          <ScalarProperty Name="LoginResponsavel" ColumnName="LoginResponsavel" />
+          <ScalarProperty Name="NomeResponsavel" ColumnName="NomeResponsavel" />
+          <ScalarProperty Name="EmailSuperior" ColumnName="EmailSuperior" />
+          <ScalarProperty Name="LoginSuperior" ColumnName="LoginSuperior" />
+          <ScalarProperty Name="NomeSuperior" ColumnName="NomeSuperior" />
+          <ScalarProperty Name="SLA" ColumnName="SLA" />
+          <ScalarProperty Name="DataSLA" ColumnName="DataSLA" />
+          <ScalarProperty Name="DataEscalonamento" ColumnName="DataEscalonamento" />
+          <ScalarProperty Name="ComentarioAprovacao" ColumnName="ComentarioAprovacao" />
+          <ScalarProperty Name="DescricaoAcaoEfetuada" ColumnName="DescricaoAcaoEfetuada" />
+          <ScalarProperty Name="DescricaoAcao" ColumnName="DescricaoAcao" />
+          <ScalarProperty Name="DescricaoAssuntoEmail" ColumnName="DescricaoAssuntoEmail" />
+          <ScalarProperty Name="DescricaoMensagemEmail" ColumnName="DescricaoMensagemEmail" />
+          <ScalarProperty Name="DescricaoAssuntoEmailEscalonamento" ColumnName="DescricaoAssuntoEmailEscalonamento" />
+          <ScalarProperty Name="DescricaoMensagemEmailEscalonamento" ColumnName="DescricaoMensagemEmailEscalonamento" />
+          <ScalarProperty Name="CopiarSuperior" ColumnName="CopiarSuperior" />
+          <ScalarProperty Name="EmailEnviado" ColumnName="EmailEnviado" />
+          <ScalarProperty Name="TarefaCompleta" ColumnName="TarefaCompleta" />
+          <ScalarProperty Name="TarefaEscalonada" ColumnName="TarefaEscalonada" />
+          <ScalarProperty Name="NomeCompletadoPor" ColumnName="NomeCompletadoPor" />
+          <ScalarProperty Name="LoginCompletadoPor" ColumnName="LoginCompletadoPor" />
+          <ScalarProperty Name="DataFinalizado" ColumnName="DataFinalizado" />
+          <ScalarProperty Name="DataAtribuido" ColumnName="DataAtribuido" />
+          <ScalarProperty Name="LoginInclusao" ColumnName="LoginInclusao" />
+          <ScalarProperty Name="LoginAlteracao" ColumnName="LoginAlteracao" />
+          <ScalarProperty Name="DataInclusao" ColumnName="DataInclusao" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="CodigoTarefaSP" ColumnName="CodigoTarefaSP" />
+          <ScalarProperty Name="CodigoListaTarefa" ColumnName="CodigoListaTarefa" />
+          <ScalarProperty Name="CodigoHumanWorkflowID" ColumnName="CodigoHumanWorkflowID" />
+          <ScalarProperty Name="DescricaoAcaoFinalizarEtapa" ColumnName="DescricaoAcaoFinalizarEtapa" />
+          <ScalarProperty Name="AprovadoPorEmail" ColumnName="AprovadoPorEmail" />
+          <ScalarProperty Name="IndexAprovacao" ColumnName="IndexAprovacao" />
+          <ScalarProperty Name="AprovacoesAtuais" ColumnName="AprovacoesAtuais" />
+          <ScalarProperty Name="IdTarefaPai" ColumnName="IdTarefaPai" />
+          <ScalarProperty Name="EnviarPdf" ColumnName="EnviarPdf" />
+          <ScalarProperty Name="IndexHeadLineFinal" ColumnName="IndexHeadLineFinal" />
+          <ScalarProperty Name="ParametrosUrl" ColumnName="ParametrosUrl" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RelatorioOperacionalTarefa">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.RelatorioOperacionalTarefa)">
+        <MappingFragment StoreEntitySet="RelatorioOperacionalTarefa">
+          <ScalarProperty Name="Fluxo" ColumnName="Fluxo" />
+          <ScalarProperty Name="Tabela" ColumnName="Tabela" />
+          <ScalarProperty Name="IdTipoProposta" ColumnName="IdTipoProposta" />
+          <ScalarProperty Name="IdProposta" ColumnName="IdProposta" />
+          <ScalarProperty Name="TituloProposta" ColumnName="TituloProposta" />
+          <ScalarProperty Name="Combo" ColumnName="Combo" />
+          <ScalarProperty Name="RazaoSocial" ColumnName="RazaoSocial" />
+          <ScalarProperty Name="IBM" ColumnName="IBM" />
+          <ScalarProperty Name="SiteCode" ColumnName="SiteCode" />
+          <ScalarProperty Name="GT" ColumnName="GT" />
+          <ScalarProperty Name="GR" ColumnName="GR" />
+          <ScalarProperty Name="Diretor" ColumnName="Diretor" />
+          <ScalarProperty Name="CDR" ColumnName="CDR" />
+          <ScalarProperty Name="GDR" ColumnName="GDR" />
+          <ScalarProperty Name="CodigoLista" ColumnName="CodigoLista" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InstanciaFluxo">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.InstanciaFluxo)">
+        <MappingFragment StoreEntitySet="InstanciaFluxo">
+          <ScalarProperty Name="IdInstanciaFluxo" ColumnName="IdInstanciaFluxo" />
+          <ScalarProperty Name="CodigoInstanciaFluxo" ColumnName="CodigoInstanciaFluxo" />
+          <ScalarProperty Name="CodigoFluxo" ColumnName="CodigoFluxo" />
+          <ScalarProperty Name="CodigoLista" ColumnName="CodigoLista" />
+          <ScalarProperty Name="CodigoItem" ColumnName="CodigoItem" />
+          <ScalarProperty Name="StatusFluxo" ColumnName="StatusFluxo" />
+          <ScalarProperty Name="NomeFluxo" ColumnName="NomeFluxo" />
+          <ScalarProperty Name="NomeEtapa" ColumnName="NomeEtapa" />
+          <ScalarProperty Name="NomeSolicitacao" ColumnName="NomeSolicitacao" />
+          <ScalarProperty Name="NomeSolicitante" ColumnName="NomeSolicitante" />
+          <ScalarProperty Name="LoginSolicitante" ColumnName="LoginSolicitante" />
+          <ScalarProperty Name="DataInicio" ColumnName="DataInicio" />
+          <ScalarProperty Name="DataFinalizado" ColumnName="DataFinalizado" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="CodigoInstanceID" ColumnName="CodigoInstanceID" />
+          <ScalarProperty Name="CodigoWorkflowProgressID" ColumnName="CodigoWorkflowProgressID" />
+          <ScalarProperty Name="NumeroTentativaInicio" ColumnName="NumeroTentativaInicio" />
+          <ScalarProperty Name="DataAlteracao" ColumnName="DataAlteracao" />
+          <ScalarProperty Name="ErroCancelado" ColumnName="ErroCancelado" />
+          <ScalarProperty Name="FluxoReprovado" ColumnName="FluxoReprovado" />
+          <ScalarProperty Name="EtapaParalela" ColumnName="EtapaParalela" />
+          <ScalarProperty Name="LoginGerenteTerritorio" ColumnName="LoginGerenteTerritorio" />
+          <ScalarProperty Name="NomeGerenteTerritorio" ColumnName="NomeGerenteTerritorio" />
+          <ScalarProperty Name="EmailGerenteTerritorio" ColumnName="EmailGerenteTerritorio" />
+          <ScalarProperty Name="LoginDiretorVendas" ColumnName="LoginDiretorVendas" />
+          <ScalarProperty Name="NomeDiretorVendas" ColumnName="NomeDiretorVendas" />
+          <ScalarProperty Name="EmailDiretorVendas" ColumnName="EmailDiretorVendas" />
+          <ScalarProperty Name="LoginGdr" ColumnName="LoginGdr" />
+          <ScalarProperty Name="NomeGdr" ColumnName="NomeGdr" />
+          <ScalarProperty Name="EmailGdr" ColumnName="EmailGdr" />
+          <ScalarProperty Name="LoginGerenteRegiao" ColumnName="LoginGerenteRegiao" />
+          <ScalarProperty Name="NomeGerenteRegiao" ColumnName="NomeGerenteRegiao" />
+          <ScalarProperty Name="EmailGerenteRegiao" ColumnName="EmailGerenteRegiao" />
+          <ScalarProperty Name="LoginCdr" ColumnName="LoginCdr" />
+          <ScalarProperty Name="NomeCdr" ColumnName="NomeCdr" />
+          <ScalarProperty Name="EmailCdr" ColumnName="EmailCdr" />
+          <ScalarProperty Name="DataRestartWorkflow" ColumnName="DataRestartWorkflow" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoSP">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.GrupoSP)">
+        <MappingFragment StoreEntitySet="GrupoSP">
+          <ScalarProperty Name="IdGrupoSP" ColumnName="IdGrupoSP" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoUsuariosSP">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.GrupoUsuariosSP)">
+        <MappingFragment StoreEntitySet="GrupoUsuariosSP">
+          <ScalarProperty Name="IdGrupoUsuariosSP" ColumnName="IdGrupoUsuariosSP" />
+          <ScalarProperty Name="IdUsuarioSP" ColumnName="IdUsuarioSP" />
+          <ScalarProperty Name="IdGrupoSP" ColumnName="IdGrupoSP" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UsuarioSP">
+      <EntityTypeMapping TypeName="IsTypeOf(PortalDeFluxoModel.UsuarioSP)">
+        <MappingFragment StoreEntitySet="UsuarioSP">
+          <ScalarProperty Name="IdUsuarioSP" ColumnName="IdUsuarioSP" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="LoginComClaims" ColumnName="LoginComClaims" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="LookupValue" ColumnName="LookupValue" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="SiteAdmin" ColumnName="SiteAdmin" />
+          <ScalarProperty Name="ContaSistema" ColumnName="ContaSistema" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SAEParametros">
+      <EntityTypeMapping TypeName="PortalDeFluxoModel.SAEParametros">
+        <MappingFragment StoreEntitySet="SAEParametros">
+          <ScalarProperty Name="TipoInformacao" ColumnName="TipoInformacao" />
+          <ScalarProperty Name="CampoSistema" ColumnName="CampoSistema" />
+          <ScalarProperty Name="Planilha" ColumnName="Planilha" />
+          <ScalarProperty Name="Celula" ColumnName="Celula" />
+          <ScalarProperty Name="Direcao" ColumnName="Direcao" />
+          <ScalarProperty Name="Sistema" ColumnName="Sistema" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
